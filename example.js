@@ -31,7 +31,7 @@ function initialize() {
 
 	var address = " 580 Ash Street Winnipeg MB";
 	var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
-	var mayLatLng = 
+
 		
 		var mapOptions = {
          		 center: new google.maps.LatLng(coordinates[0], coordinates[1]), 
