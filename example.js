@@ -135,6 +135,7 @@ var styledMap = new google.maps.StyledMapType(styles,
          		center: homeCenter,
          		zoom: 15,
          		mapTypeId: google.maps.MapTypeId.ROADMAP
+         		//, disableDefaultUI: true
         		};
 
         	var map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -155,7 +156,7 @@ var styledMap = new google.maps.StyledMapType(styles,
 		      fillOpacity: 0.15,
 		      map: map,
 		      center: homeCenter,
-		      radius: 1000*searchDistance
+		      radius: 100*searchDistance
 		    };
 		    // Add the circle for this city to the map.
 		    searchCircle = new google.maps.Circle(areaOfSearch);
@@ -172,7 +173,7 @@ var styledMap = new google.maps.StyledMapType(styles,
             for (i = 0; i < markers.length; i++) {  
         		
         		console.log(searchCircle)
-            	if (searchCircle.getBounds().contains(markers[i][1]) == true) {
+            	if (searchCircle.getBounds().contains(markers[i][1]) == true) { //If the points are within distance, we add them to the map
 
 
         		marker = new google.maps.Marker({
@@ -211,19 +212,13 @@ var styledMap = new google.maps.StyledMapType(styles,
 //
 
 
-
-
-
-
-
-
-
-
-
       google.maps.event.addDomListener(window, 'load', initialize); //This is where it's started
 
 
 
+//chat overlay
+//slider
+//checkbox
 
 
 

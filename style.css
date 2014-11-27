@@ -1,0 +1,14 @@
+html, body, #map-canvas { 
+	height: 100%; margin: 0; padding: 0;
+}
+
+
+#overmap{
+    position: absolute;
+    background-color: white;
+    height: 80px;
+    width: 150px;
+    left: 80%;
+    top: 80%;
+    z-index: 1;
+}
