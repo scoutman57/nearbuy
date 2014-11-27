@@ -1,5 +1,6 @@
 html, body, #map-canvas { 
 	height: 100%; margin: 0; padding: 0;
+	background: transparent url(images/ajax-loader.gif) no-repeat center center;
 }
 
 
