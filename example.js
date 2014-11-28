@@ -1,12 +1,8 @@
-
-
 // Use it here to get the value after loading the widget
 // ask the instantiated slider widget to tell you it's current value
 
 var searchAddress ="580 Ash Street Winnipeg MB";
 var searchDistance = 1; 
-
-
 
 
 
@@ -32,6 +28,33 @@ function getCoordinates(address, callback){
  	return coordinates;
 }
 
+/*
+function printMarker(newmarker){
+
+ var marker2 = new google.maps.Marker({ // second marker
+		    position: newmarker,
+		    map: map,
+		    title:"Hello World!"
+		});
+
+}
+*/
+//given an address, will return the latitude Failed. Doesn't really work
+/*
+function addressToLat(address){ //will do this when people enter their addresses
+
+	//var address = " 580 Ash Street Winnipeg MB";
+	var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
+	var geocodedAddress = new google.maps.LatLng(coordinates[0], coordinates[1]); 
+
+	console.log("The stuff I want: " + geocodedAddress)
+
+	return geocodedAddress
+	});
+	
+
+}
+*/
 
 //Need a function to convert addresses to geocode 
 
@@ -51,14 +74,15 @@ var markers = [
 
 }
 
+
 function getAddMarkersStraight(){
 	var contentString = 'I WANT TO BE FORGOTTEN'
 
 	var markers = [
-['Add1',"-97.17913089999999k, 49.863000299999996", "couch", contentString],
-['Add2',"-97.18013089999999k, 49.863000299999996", "couch", contentString],
-['Add3',"-97.18113089999999k, 49.863000299999996", "couch", contentString],
-['Add4',"-97.18213089999999k, 49.863000299999996", "couch", contentString],
+		['Add1',"-97.17913089999999k, 49.863000299999996", "couch", contentString],
+		['Add2',"-97.18013089999999k, 49.863000299999996", "couch", contentString],
+		['Add3',"-97.18113089999999k, 49.863000299999996", "couch", contentString],
+		['Add4',"-97.18213089999999k, 49.863000299999996", "couch", contentString],
 	];
 
 return markers
@@ -67,30 +91,24 @@ return markers
 
 //should each marker have a small summary, a pic, and a link to an ad
 
-
-
 //need to pass a Center to it as well.
 function initialize(searchDistance, givenAddress) {
-	//var address = "580 Ash Street Winnipeg MB";
+	var address = "580 Ash Street Winnipeg MB";
 	
 	//searchAddress = address
-	address = givenAddress
+	//address = givenAddress
 
 	var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
 	var homeCenter = new google.maps.LatLng(coordinates[0], coordinates[1]); 
+
+
 	var newSearchDistance = /' searchDistance'/
 	document.getElementById('rangeValue').innerHTML= "<p>" + searchDistance + "</p>"
-	
 	//var searchDistance = 1 //This is where they determine how far they want to look
 	//var center = addressToLat(address)
 	//console.log("The Stuff I have" + addressToLat(address))
 
 //map style
-
-
- 
-
-
 
 var styles =  [
   {
@@ -107,9 +125,47 @@ var styledMap = new google.maps.StyledMapType(styles,
     {name: "Styled Map"});
 
 
+
+
+
+//Put this into a function
+
+ var contentString =  '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+      'sandstone rock formation in the southern part of the '+
+      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+      'south west of the nearest large town, Alice Springs; 450&#160;km '+
+      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+      'Aboriginal people of the area. It has many springs, waterholes, '+
+      'rock caves and ancient paintings. Uluru is listed as a World '+
+      'Heritage Site.</p>'+
+      '<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      'http://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+      '(last visited June 22, 2009).</p>'+
+      '</div>'+
+      '</div>';
+
+
 var markers = getAddMarkers(coordinates)
 	console.log(markers)
 
+	/*
+	var markers = [
+		//syntax is address, coords of address, title of advertisement, 
+		 ['Add1', new google.maps.LatLng(coordinates[0]+0.001, coordinates[1]+0.005), "couch", contentString],
+		    ['Add2', new google.maps.LatLng(coordinates[0]+0.002, coordinates[1]+0.004), "chair",contentString],
+		    ['Add3', new google.maps.LatLng(coordinates[0]+0.003, coordinates[1]+0.003), "tv",contentString],
+		    ['Add4', new google.maps.LatLng(coordinates[0]+0.004, coordinates[1]+0.002), "sink",contentString],
+		    ['Add5',new google.maps.LatLng(coordinates[0]+0.005, coordinates[1]+0.001), "dimensional-rifter",contentString]
+	];
+*/
+//
 		var mapOptions = {
          		center: homeCenter,
          		zoom: 15,
@@ -145,8 +201,6 @@ var markers = getAddMarkers(coordinates)
 		//searchCircle.setRadius( *searchDistance) use this to change the map
 
 //		searchCircle.setMap(null) //To get rid of the circle just toggle this between null and map.
-
-
 
 
 //loop to put the markers on the map
@@ -205,6 +259,9 @@ console.log(searchCircle + " is printed")
 	});    
       }
 //
+
+
+
 
 
 // 0-------------------------------THIS IS WHERE WE DO THE CIRCLE REDRAWING.
