@@ -1,0 +1,143 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	text-shadow: 2px 2px 2px #555555;
+	color: white;
+	background: url("../img/bkg5.jpg");
+}
+
+h1{
+	font-size: 64px;
+	width: 400px;
+	text-align: center;
+}
+
+.icon {
+	vertical-align: bottom;
+	width:50px;
+	height:50px;
+}
+/* ----- BUTTONS ----- */
+
+button {
+	background-color:transparent;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:5px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	width: 128px;
+	text-align: center;
+	margin: 0px;
+	padding: 10px 10px;
+	text-decoration:none;
+	text-shadow: 2px 2px 2px #555555;
+}
+button:hover {
+	background-color:rgba(255,255,255,0.25);
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+button:focus{
+	outline: none;
+}
+
+/* ----- CONTAINERS ----- */
+
+/*main website container*/
+div.large{
+	width: 400px;
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+}
+/*individual menus*/
+div.mid{
+	width: 300px;
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+/*single icon and textfield*/ 
+div.small{
+	text-align: left;
+	width: 250px;
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+	border: 5px solid white;
+	border-radius: 10px;
+	padding-left: 5px;
+}
+
+/* ----- INPUT FIELDS ----- */
+
+input[type="text"], input[type="password"]{
+	background-color: rgba(0,0,0,0.0);
+	border: none;
+	width:150px;
+	padding: 10px 5px;
+	color: white;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	text-shadow: 2px 2px 2px #555555;
+}input:focus{
+	outline: none;
+}
+/*placeholder css for var browsers*/
+::-webkit-input-placeholder { color: white; }
+:-moz-placeholder { color: white; opacity:  1; }
+::-moz-placeholder { color: white; opacity:  1; }
+:-ms-input-placeholder { color: white; }
+
+
+/* ----- TABLES ----- */
+
+table {
+	border: 5px solid white;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgba(0,0,0,0.50);
+	text-shadow: none;
+}
+/*td, th {
+    width: 100px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}*/
+.desc {
+    width: 100px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+tr:nth-child(even) {
+    background-color: rgba(100,100,100,0.50);
+}
+tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.5);
+}
+.tooltip
+{
+    width: 200px;
+    position: absolute;
+    color: white;
+    background: url("bkgtip.jpg");
+    text-align: center;
+    border: 5px solid white;
+	border-radius: 10px;
+	padding: 10px;
+    white-space: normal;
+}
