@@ -27,33 +27,6 @@ function getCoordinates(address, callback){
  	return coordinates;
 }
 
-/*
-function printMarker(newmarker){
-
- var marker2 = new google.maps.Marker({ // second marker
-		    position: newmarker,
-		    map: map,
-		    title:"Hello World!"
-		});
-
-}
-*/
-//given an address, will return the latitude Failed. Doesn't really work
-/*
-function addressToLat(address){ //will do this when people enter their addresses
-
-	//var address = " 580 Ash Street Winnipeg MB";
-	var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
-	var geocodedAddress = new google.maps.LatLng(coordinates[0], coordinates[1]); 
-
-	console.log("The stuff I want: " + geocodedAddress)
-
-	return geocodedAddress
-	});
-	
-
-}
-*/
 
 //Need a function to convert addresses to geocode 
 
@@ -95,10 +68,63 @@ var ajaxCall = $.ajax({
      });
 
 
+function redoDistance(newDistance){
+$.ajax({
+    type: 'GET',
+    url: 'http://localhost/dbToArray.php',
+    complete: function(r){
+
+    
+
+    var array = eval(r.responseText)
 
 
+    console.log(array[0].latlng)
 
 
+    initialize2(newDistance, searchAddress, array)
+    }
+     });
+
+}
+
+
+function redoCircle(newAddress){
+$.ajax({
+    type: 'GET',
+    url: 'http://localhost/dbToArray.php',
+    complete: function(r){
+
+    
+
+    var array = eval(r.responseText)
+
+
+  var geocoder = new google.maps.Geocoder();  
+
+  geocoder.geocode({ 'latLng': newAddress }, function (results, status) {
+    if (status !== google.maps.GeocoderStatus.OK) {
+      alert(status);
+    }
+    // This is checking to see if the Geoeode Status is OK before proceeding
+    if (status == google.maps.GeocoderStatus.OK) {
+      
+
+      var address = (results[0].formatted_address);
+
+      searchAddress = address
+
+	initialize2(searchDistance, address, array)
+     
+    }
+  });
+
+
+    //initialize2(searchDistance, newAddress, array)
+    }
+     });
+
+}
 
 
 
@@ -134,7 +160,6 @@ return markers
 
 
 
-
 function search(searchTerm){
 
 }
@@ -146,7 +171,7 @@ function changeAddress(newAddress){
 
 
 
-
+/*
 
 //should each marker have a small summary, a pic, and a link to an ad
 
@@ -286,19 +311,19 @@ console.log(searchCircle + " is printed")
 
 
 
-
+*/
 
 
 //should each marker have a small summary, a pic, and a link to an ad
 
 //need to pass a Center to it as well.
 function initialize2(searchDistance, givenAddress, markers) {
-	var address = "580 Ash Street Winnipeg MB";
+	//var address = "580 Ash Street Winnipeg MB";
 	
 	
 
 	//searchAddress = address
-	//address = givenAddress
+	address = givenAddress
 
 	var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
 	var homeCenter = new google.maps.LatLng(coordinates[0], coordinates[1]); 
@@ -418,12 +443,13 @@ console.log(searchCircle + " is printed")
 		    searchCircle.setMap(null)
 		    
 		    areaOfSearch.center = homeMarker.getPosition()
+		    console.log("NEW POS: " + areaOfSearch.center)
 		    searchCircle = new google.maps.Circle(areaOfSearch);
 
 		    //searchCircle.setCenter(homeMarker.getPosition())
 		    //searchCircle = new google.maps.Circle(areaOfSearch);
-		    initialize(searchDistance, searchCircle.getCenter())
-
+		    //initialize(searchDistance, searchCircle.getCenter())
+		    redoCircle(searchCircle.getCenter())
 
 
 		  });
@@ -433,10 +459,7 @@ console.log(searchCircle + " is printed")
 
 
 
-
-
-
-
+//Relic from the first initialize
 //google.maps.event.addDomListener(window, 'load', initialize(1, searchAddress)); //This is where it's started
 
 
