@@ -21,7 +21,8 @@ $(document).ready(function(){
 	});
 
 	$(".del").click(function(){
-		$(this).parent().parent().remove();
+		//$(this).parent().parent().remove();
+		$(this).parent().parent().hide(1000);
 		//ADD REMOVAL FROM DATABASE
 	});
 

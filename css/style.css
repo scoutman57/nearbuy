@@ -8,7 +8,6 @@ body {
 
 h1{
 	font-size: 64px;
-	width: 400px;
 	text-align: center;
 }
 
@@ -49,11 +48,18 @@ button:focus{
 	outline: none;
 }
 
+.del {
+	vertical-align: bottom;
+	width:25px;
+	height:25px;
+}
+
 /* ----- CONTAINERS ----- */
 
 /*main website container*/
 div.large{
 	width: 400px;
+	text-align: center;
 	position: center;
 	margin-left: auto;
     margin-right: auto;
@@ -93,12 +99,12 @@ input[type="text"], input[type="password"]{
 }input:focus{
 	outline: none;
 }
+
 /*placeholder css for var browsers*/
 ::-webkit-input-placeholder { color: white; }
 :-moz-placeholder { color: white; opacity:  1; }
 ::-moz-placeholder { color: white; opacity:  1; }
 :-ms-input-placeholder { color: white; }
-
 
 /* ----- TABLES ----- */
 
@@ -106,19 +112,17 @@ table {
 	border: 5px solid white;
 	border-radius: 10px;
 	padding: 20px;
-	background-color: rgba(0,0,0,0.50);
+	text-align: center;
+	/*background-color: rgba(0,0,0,0.50);*/
 	text-shadow: none;
 }
-/*td, th {
-    width: 100px;
-    max-width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}*/
+td, th {
+    max-width: 200px;
+    font-size: 16px;
+}
 .desc {
     width: 100px;
-    max-width: 100px;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -129,15 +133,63 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: rgba(0,0,0,0.5);
 }
-.tooltip
-{
+.tooltip {	
+	font-size: 16px;
     width: 200px;
     position: absolute;
     color: white;
-    background: url("bkgtip.jpg");
+    background: url("../img/bkgtip.jpg");
     text-align: center;
     border: 5px solid white;
 	border-radius: 10px;
 	padding: 10px;
     white-space: normal;
+}
+
+/* ----- NEW LISTING ----- */
+
+div.listing{
+	/*background-color: rgba(0,0,0,0.5);*/
+	width: 550px;
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+	border: 5px solid white;
+	border-radius: 10px;
+	text-align: center;
+	padding: 10px;
+}
+h2{
+	margin: 10px;
+	font-size: 32px;
+	width: 500px;
+	text-align: center;
+}
+input.new{
+	width: 500px;
+	padding: 5px;
+	font-weight:normal;
+	text-shadow: none;
+}
+button.submit{
+	width:100px;
+	padding: 5px;
+}
+textarea{
+	width: 500px;
+	max-width: 500px;
+	height: 100px;
+	border: 5px solid white;
+	border-radius: 10px;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family:Arial;
+	font-size:20px;
+	color: white;
+	text-shadow: none;
+	background-color: rgba(0,0,0,0.0);
+}
+textarea:focus{
+	outline: none;
 }
