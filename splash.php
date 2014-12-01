@@ -12,7 +12,9 @@
 <body>
 
 	<h1>Logged in successfully</h1>
+	<img src="img/list.png" class="icon"> 
 	<button>Manage your listings</button>
+	<img src="img/map.png" class="icon">
 	<button>Find out what's nearbuy</button>
 
 </body>
