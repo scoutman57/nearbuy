@@ -109,6 +109,8 @@ input[type="text"], input[type="password"]{
 /* ----- TABLES ----- */
 
 table {
+	margin-left: auto;
+	margin-right: auto;
 	border: 5px solid white;
 	border-radius: 10px;
 	padding: 20px;
