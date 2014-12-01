@@ -14,7 +14,7 @@ function register(){
     regUser = document.getElementById("reguser").value;
     regPassword = document.getElementById("regpass").value;
     regEmail = document.getElementById("regemail").value;
-
+    regAddress =  document.getElementById("regadd").value;
 //    var profile = {username : regUser, password : regPassword, email : regEmail};
 
     var prepTable = true
@@ -52,7 +52,7 @@ function register(){
 
        // console.log(encrypted)
 
-      var profile = {username : regUser, password : encrypted, email : regEmail, profileID : parseInt(id[0])}
+      var profile = {username : regUser, password : encrypted, email : regEmail, profileID : parseInt(id[0]), address: regadd}
 
     var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
@@ -106,14 +106,9 @@ function login(){
         
             });
 
-
-
-
                 }    
         
             });
-
-
 
 }
 
