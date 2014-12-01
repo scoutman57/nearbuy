@@ -3,6 +3,7 @@
 
 var searchAddress ="580 Ash Street Winnipeg MB";
 var searchDistance = 1; 
+var zoomLevel = 15;
 
 
 function getCoordinates(address, callback){
@@ -78,11 +79,12 @@ $.ajax({
 
     var array = eval(r.responseText)
 
+    searchDistance = newDistance
 
     console.log(array[0].latlng)
 
 
-    initialize2(newDistance, searchAddress, array)
+    initialize2(searchDistance, searchAddress, array)
     }
      });
 
@@ -133,10 +135,28 @@ function search(searchTerm){
 }
 
 function changeAddress(newAddress){
-	searchAddress = newAddress;
-	initialize(searchAddress);
+$.ajax({
+    type: 'GET',
+    url: 'http://localhost/dbToArray.php',
+    complete: function(r){
+
+    
+
+    var array = eval(r.responseText)
+
+
+    console.log(array[0].latlng)
+
+searchAddress = newAddress;
+
+	initialize2(searchDistance, searchAddress,array);
+
+    }
+     });
+
 }
 
+	
 
 
 
@@ -181,7 +201,7 @@ var styledMap = new google.maps.StyledMapType(styles,
 	console.log(markers)
 		var mapOptions = {
          		center: homeCenter,
-         		zoom: 15,
+         		zoom: zoomLevel,
          		mapTypeId: google.maps.MapTypeId.ROADMAP
          		, disableDefaultUI: true
         		};
@@ -276,8 +296,14 @@ console.log(searchCircle + " is printed")
 		    //initialize(searchDistance, searchCircle.getCenter())
 		    redoCircle(searchCircle.getCenter())
 
-
 		  });
+
+
+		 google.maps.event.addListener(map, 'zoom_changed', function() {
+		    zoomLevel = map.getZoom();
+		    });
+
+
 	});    
       }
 //

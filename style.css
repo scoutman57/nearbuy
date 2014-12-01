@@ -1,15 +1,94 @@
 html, body, #map-canvas { 
-	height: 100%; margin: 0; padding: 0;
+	height: 100%; margin: 10; padding: 10;
 	background: transparent url(images/ajax-loader.gif) no-repeat center center;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	text-shadow: 2px 2px 2px #555555;
+	color: white;
+}
+
+
+#rangeValue, p {
+	display:inline;
+	text-align: center;
+
+
 }
 
 
 #overmap{
     position: absolute;
-    background-color: white;
-    height: 80px;
-    width: 150px;
-    left: 80%;
+    background-color: rgba(105,105,105,0.65);
+    height: 100px;
+    width: 300px;
+    left: 5%;
     top: 80%;
     z-index: 1;
+    border-radius:15px;
+    border:5px solid #ffffff;
+}
+
+
+input[type="range"]{
+		text-align: center;
+    background: rgba(0, 0, 0,0.5);
+    width: 195px;
+    height: 10px;
+    margin-left: 50px;
+    -webkit-appearance: none;
+    border-radius: 20px;
+    -moz-border-radius: 8px;
+    -wekkit-border-radius: 8px;
+    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0.9, 0.9, 0.9, 0.9);
+    -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0.9, 0.9, 0.9, 0.9);
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(0.9, 0.9, 0.9, 0.9);
+}
+
+
+
+#button {
+	display: inline;	
+	background-color:transparent;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:4px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	width: 95px;
+	text-align: center;
+	margin: 0px;
+	padding: 10px 10px;
+	text-decoration:none;
+	text-shadow: 2px 2px 2px #555555;
+}
+#button:hover {
+	background-color:rgba(255,255,255,0.25);
+}
+#button:active {
+	position:relative;
+	top:1px;
+}
+#button:focus{
+	outline: none;
+}
+
+input[type="text"]{
+	display: inline;
+	background-color: rgba(0,0,0,0.0);
+	border: 4px solid#ffffff;
+	width:100px;
+	padding: 10px 5px;
+	border-radius:15px;
+	color: white;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	text-shadow: 2px 2px 2px #555555;
+}input:focus{
+	outline: none;
 }
