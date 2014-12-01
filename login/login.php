@@ -3,15 +3,16 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 
+
 $servername = "localhost";
 $dbuser = 'root';
 $dbpass = '';
-$dbname = "Q2DB";
+$dbname = "nearbuy";
+
+$connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
+
 
 $keyArray;
-
-
-  $connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
 
 if (!$connection) {
    	 die("Connection failed: " . mysqli_connect_error());
