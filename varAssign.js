@@ -14,7 +14,7 @@ function register(){
     regUser = document.getElementById("reguser").value;
     regPassword = document.getElementById("regpass").value;
     regEmail = document.getElementById("regemail").value;
-
+    regAddress =  document.getElementById("reghome").value;
 //    var profile = {username : regUser, password : regPassword, email : regEmail};
 
     var prepTable = true
@@ -52,7 +52,7 @@ function register(){
 
        // console.log(encrypted)
 
-      var profile = {username : regUser, password : encrypted, email : regEmail, profileID : parseInt(id[0])}
+      var profile = {username : regUser, password : encrypted, email : regEmail, profileID : parseInt(id[0]), address: regadd}
 
     var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
@@ -72,6 +72,16 @@ function register(){
 });
 }
 
+
+function setCookie(cname) {
+    
+    document.cookie = cname;
+}
+
+function getCookie(cname) {
+    var name = cname 
+    return name;
+}
 
 
 function login(){
@@ -101,19 +111,20 @@ function login(){
                 complete: function(r){
 
                         console.log(r.responseText)
+                        setCookie(user)
+
+                        document.write(r.responseText)
+
+
+
                        console.log("success! This is where you draw the login success or fail page!")
                 }    
         
             });
 
-
-
-
                 }    
         
             });
-
-
 
 }
 
