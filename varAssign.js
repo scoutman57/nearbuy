@@ -14,7 +14,7 @@ function register(){
     regUser = document.getElementById("reguser").value;
     regPassword = document.getElementById("regpass").value;
     regEmail = document.getElementById("regemail").value;
-    regAddress =  document.getElementById("regadd").value;
+    regAddress =  document.getElementById("reghome").value;
 //    var profile = {username : regUser, password : regPassword, email : regEmail};
 
     var prepTable = true
