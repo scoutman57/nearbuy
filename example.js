@@ -1,9 +1,37 @@
 // Use it here to get the value after loading the widget
 // ask the instantiated slider widget to tell you it's current value
 
-var searchAddress ="580 Ash Street Winnipeg MB";
+var searchAddress ="580 Ash Street Winnipeg MB"; //script to change this
 var searchDistance = 1; 
 var zoomLevel = 15;
+
+
+function getAddress(username){
+
+	var user = getCookie(username)
+
+	var profile = {username: user}
+
+var ajaxCall = $.ajax({
+    type: 'POST',
+    url: 'http://localhost/getAddress.php',
+    complete: function(r){
+
+    
+
+    searchAddress = eval(r.responseText)
+
+
+    initialize2(searchDistance, searchAddress, array)
+    }
+     });
+
+
+
+
+}
+
+
 
 
 function getCoordinates(address, callback){
@@ -306,12 +334,12 @@ console.log(searchCircle + " is printed")
 
 	});    
       }
-//
-
 
 
 //Relic from the first initialize
 //google.maps.event.addDomListener(window, 'load', initialize(1, searchAddress)); //This is where it's started
+
+
 
 
 

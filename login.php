@@ -41,13 +41,40 @@ if($encryptedPassword == $password){
 
 createSession();
 
-	echo "success!";
+	
 
+echo "<!DOCTYPE html>";
+echo "<html>";
+echo "<head> ";
+    echo "<link href='css/style.css' rel='stylesheet'>";
+    echo "<script src='js/jquery-2.1.1.min.js'></script>";
+     echo "<script src='varAssign.js'></script>";
+    echo "<title>SPLASH</title>";
+echo "</head>";
+echo "<body>";
+	echo "<h1>Logged in successfully</h1>";
+	echo "<button>Manage your listings</button>";
+	echo "<button onclick='getAddress()'>Find out what's nearbuy</button>";
+echo "</body>";
+echo "</html>";
 	
 
 } else {
 
-	echo "fail!";
+	echo "<!DOCTYPE html>";
+echo "<html>";
+echo "<head> ";
+    echo "<link href='css/style.css' rel='stylesheet'>";
+    echo "<script src='js/jquery-2.1.1.min.js'></script>";
+     echo "<script src='varAssign.js'></script>";
+    echo "<title>SPLASH</title>";
+echo "</head>";
+echo "<body>";
+	echo "<h1>Wrong Username or password</h1>";
+	echo "<a href='www.near-buy.me'<button>Go Back</button></a>";
+echo "</body>";
+echo "</html>";
+	
 }
 
 

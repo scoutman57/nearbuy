@@ -73,6 +73,16 @@ function register(){
 }
 
 
+function setCookie(cname) {
+    
+    document.cookie = cname;
+}
+
+function getCookie(cname) {
+    var name = cname 
+    return name;
+}
+
 
 function login(){
 
@@ -101,6 +111,12 @@ function login(){
                 complete: function(r){
 
                         console.log(r.responseText)
+                        setCookie(user)
+
+                        document.write(r.responseText)
+
+
+
                        console.log("success! This is where you draw the login success or fail page!")
                 }    
         
