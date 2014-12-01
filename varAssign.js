@@ -25,7 +25,7 @@ function register(){
 
     var ajaxCall = $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
-    url: 'http://localhost/registration.php',
+    url: 'http://localhost/php/registration.php',
     data: firstPrep,
     complete: function(r){
 
@@ -56,7 +56,7 @@ function register(){
 
     var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
-    url: 'http://localhost/registrationToDB.php',
+    url: 'http://localhost/php/registrationToDB.php',
     data: profile,
     complete: function(r){
 
@@ -84,7 +84,7 @@ function login(){
 
     var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
-    url: 'http://localhost/handshake.php',
+    url: 'http://localhost/php/handshake.php',
     data: usernameForHandshake,
     complete: function(r){
 
@@ -96,7 +96,7 @@ function login(){
 
              var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
-                url: 'http://localhost/login.php',
+                url: 'http://localhost/php/login.php',
                 data: profile,
                 complete: function(r){
 
@@ -133,7 +133,7 @@ sessionID = document.getElementById("sessionID").value;
 	//xmlhttp.send();
 
 
-xmlhttp.open("GET", "http://localhost/logout.php" + "?sessionID=" + sessionID, false);
+xmlhttp.open("GET", "http://localhost/php/logout.php" + "?sessionID=" + sessionID, false);
 
 
 xmlhttp.send(sessionID);
@@ -156,7 +156,7 @@ function sendHandshake(){
 	//xmlhttp.send();
 
 
-xmlhttp.open("GET", "http://localhost/handshake.php" + "?username=" + user, false);
+xmlhttp.open("GET", "http://localhost/php/handshake.php" + "?username=" + user, false);
 
 
 xmlhttp.send(user);
@@ -170,28 +170,6 @@ caesar(true);
 
 }
 
-
-
-
-function toJSON(){
-
-var profile = {username : user, password : encrypted};
-//profile = JSON.stringify(profile);
-
-var response;
-
-
-var ajaxCall = $.ajax({
-    type: 'POST',
-    url: 'http://localhost/login.php',
-    data: profile,
-    complete: function(r){
-
-      document.getElementById("back").innerHTML = r.responseText;
-    }
- });
-
-}
 
 
 
@@ -245,8 +223,6 @@ encrypted = encrypted.join(''); // puts it all together
 
 if(login === true){
 
-
-toJSON();
 
 } else {
 
