@@ -21,19 +21,6 @@ function getCoordinates(address, callback){
  	return coordinates;
 }
 
-console.log("test")
-
-//This gets the entire array from our db
-var ajaxCall = $.ajax({
-    type: 'GET',
-    url: 'http://localhost/dbToArray.php',
-    complete: function(r){
-
-    	//var output = JSON.parse(r.responseText)
-      //console.log( output);
-    	console.log(r.responseText)
-    }
-     });
 
 
 
@@ -46,10 +33,14 @@ var coordinates = getCoordinates(address, function(coordinates){
 	var longitude = coordinates[1]	
 	var convertedAddress = latitude + ", " + longitude
 
-var inputName = //get html element 
-var inputAddress = 
-var inputDescription = 
-var inputImageLink = 
+var inputName = ''
+
+
+
+//get html element 
+var inputAddress ='' 
+var inputDescription ='' 
+var inputImageLink = ''
 
 var profile = {latlng: convertedAddress, username: inputName, address: inputAddress, decription: inputDescription , image: inputImageLink};
 
@@ -57,7 +48,7 @@ var response;
 
 		var ajaxCall = $.ajax({
 		    type: 'POST',
-		    //url: 'http://localhost/registrationToDB.php',
+		    //url: 'http://localhost/listToDB.php',
 		    url: 'registrationToDB'
 		    data: profile,
 		    complete: function(r){

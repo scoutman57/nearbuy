@@ -15,19 +15,15 @@ else
   echo "no username supplied";
 }
 
-//$username = $_GET['user'];
 
-//$username = "me";
+
 
 $servername = "localhost";
-#$username = "username";
-#$password = "password";
-$dbname = "Q2DB";
+$dbuser = 'root';
+$dbpass = '';
+$dbname = "nearbuy";
 
-
-#mysqli_connect(host,username,password,dbname,port,socket); 
-
-$connection = mysqli_connect($servername, 'root', '',$dbname); 
+  $connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
 
 /*
 if (mysqli_connect_errno())
