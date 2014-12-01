@@ -21,11 +21,13 @@ if (!$connection) {
 
 
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+//$username = $_POST["username"];
+//$password = $_POST["password"];
+
+$username = "a";
+$password ="d";
 $sessionID = getSessionID();
 $memberID = retrieveMemberId();
-
 $passQuery = "SELECT `password` FROM `user` WHERE `username`='$username'";
 
 
@@ -37,16 +39,11 @@ $encryptedPassword = $row['password'];
 
 if($encryptedPassword == $password){
 
+createSession();
+
 	echo "success!";
 
-	createSession();
-
 	
-
-
-
-
-
 
 } else {
 
@@ -56,12 +53,11 @@ if($encryptedPassword == $password){
 
 function createSession(){
 
-global $memberID, $sessionID;
+global $memberID, $sessionID, $connection;
 	
-$query = "INSERT INTO `session`(`id`, `sessionID`) VALUES '$memberID' , '$sessionID' " ;
+$query = "INSERT INTO `session`(`id`, `sessionID`) VALUES ('$memberID' , '$sessionID') " ;
+
 mysqli_query($connection, $query);
-
-
 
 }
 
@@ -98,7 +94,7 @@ global  $connection, $username, $keyArray;
 
 	while ($row = $result->fetch_assoc()){
 		
-		return $row['memberID'];
+		return $row['id'];
 		
 			}
 			
