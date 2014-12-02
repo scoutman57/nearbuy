@@ -44,6 +44,7 @@ var name = document.getElementById("listName").value;
 var descriptionText = document.getElementById("listDesc").value;
 var imageLink = document.getElementById("listPIc").value;
 var price = document.getElementById("listPrice").value;
+  var address = document.getElementById('listLoc').value;
 //var givenAddress document.getElementById('listLoc').value;
 //var address =  document.getElementById('listLoc').value;
 //var address; // for if we want to grab their home address
@@ -58,13 +59,9 @@ var latlng = coordinates[0] + ", "+coordinates[1]
 
 console.log(latlng)
 
-console.log('breakpoint 1 works')
-            var latlng = readLatLngCookie("latlng")
 
-            console.log(latlng)
              var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
-             console.log(profile)
                       $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
