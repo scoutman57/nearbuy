@@ -138,6 +138,7 @@ function getMap(){
 
 function getCoordinates(address, callback){
 
+console.log("makes it here to get coordinates")
 	var coordinates;
 
 	geocoder = new google.maps.Geocoder();
