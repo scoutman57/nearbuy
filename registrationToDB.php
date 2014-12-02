@@ -20,6 +20,7 @@ $email = $_POST['email'];
 $profileID = $_POST['profileID'];
 $address = $_POST['address'];
 
+echo $address
 
 $keyQuery = "SELECT `encryptionKey` FROM `user` WHERE `id`=$profileID";
 

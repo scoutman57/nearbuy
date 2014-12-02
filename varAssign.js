@@ -61,6 +61,7 @@ function register(){
        url: 'http://near-buy.me/php/registrationToDB.php',
     data: profile,
     complete: function(r){
+        
         console.log(profile)
 
         //console.log("php echos:" +r.responseText)
