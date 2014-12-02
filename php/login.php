@@ -84,7 +84,7 @@ if($encryptedPassword == $password){
 
 createSession();
 	
-echo "hi"
+echo "hi";
 
 
  
