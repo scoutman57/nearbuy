@@ -45,7 +45,6 @@ $ad ='
 </head>
 
 <body>
-
 <div class="adpage">
     <p id="item">Item: '.$name.'</p>
     <p id="item">Seller: '.$username.'</p>
@@ -54,7 +53,6 @@ $ad ='
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
         Image: 
             <a href='.$image.' target="_blank">
                 <img id="imglink" src="img/link.png" width="50" height="50">
@@ -62,9 +60,7 @@ $ad ='
     </p>
     <p id="desc">'.$description.'</p>
 </div>
-
 </body>
-
 </html>';
 
 global $connection,$id, $userID, $username, $title, $description, $image, $price, $address, $latlng;
