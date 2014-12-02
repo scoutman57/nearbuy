@@ -60,7 +60,7 @@ createSession();
 <div class="large">
 	<h1>Login success</h1>
 	<button class="lgbutton" onclick="phptest.php"><img src="img/list.png" class="lgicon">Manage your listings</button>
-	<button class="lgbutton" onclick="gotomap.php"><img src="img/map.png" class="lgicon">Find out what'.'s nearbuy</button>
+	<button class="lgbutton" onclick="gotomap.php"><img src="img/map.png" class="lgicon">Find out whats nearbuy</button>
 </div>
 
 </body>
