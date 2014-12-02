@@ -25,7 +25,7 @@ $address = $_POST['address'];
 $latlng = $_POST['latlng'];
 $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
-$userID;
+//$userID;
 
 //getUserID();
 

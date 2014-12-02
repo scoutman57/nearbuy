@@ -32,6 +32,7 @@ console.log("makes it here to get coordinates")
     geocoder = new google.maps.Geocoder();
     geocoder.geocode({address: address}, function(results,status){ 
 
+        console.log("heyo")
         if (status == google.maps.GeocoderStatus.OK) {  //If the geocode was okay, we can return the object
 
             coords_obj = results[0].geometry.location;          
