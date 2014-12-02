@@ -20,6 +20,8 @@ var nameProfile = {username: username}
 
 var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
 
+console.log('breakpoint 1 works')
+
 /*
     var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
@@ -37,12 +39,17 @@ var profile = {username: user, title: name, description: descriptionText, image:
             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
 
+console.log('breakpoint 2 works')
+
                 var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
                 url: 'http://near-buy.me/php/enterListing.php',
                 data: profile,
                 complete: function(r){
+
+
+console.log('breakpoint 3 works')
 
                   console.log(r.responseText)
 
