@@ -29,11 +29,19 @@
 <input id="slider3" type ="range" min ="0" max="5.0" value="1" step ="0.25" onchange="redoDistance(value)"/>
 <p><br>Distance: <div id='rangeValue'>1</div> km</p>
 <input type="text" id="inputForm" name="address" value="" placeholder="Change Address" >
+<input id="button" class="backButton" type="submit" value="Back">
+<p>&nbsp&nbsp&nbsp</p>
 <input id="button" class="addressButton" type="submit" value="Submit">
 
     <script type="text/javascript">
         $(".addressButton").on('click', function() {
        changeAddress(document.getElementById('inputForm').value)
+        });
+    </script>
+
+     <script type="text/javascript">
+        $(".backButton").on('click', function() {
+       window.location.assign("splash2.html");
         });
     </script>
 
