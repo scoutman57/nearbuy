@@ -57,10 +57,13 @@ coords_obj = map.getCenter();
             
 var latlng = coordinates[0] + ", "+coordinates[1]
 
-console.log(latlng)
 
 
              var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+             addToDB(profile)
+
+/*
+                
 
                       $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
@@ -75,10 +78,30 @@ console.log(latlng)
                     }
                 });
 
-
+*/
                  // });
 
 }
+
+function addToDB(jsonProfile){
+
+
+
+                      $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+                type: 'POST',
+                //url: 'http://localhost/php/handshake.php',
+                url: 'http://near-buy.me/php/listing.php',
+                data: jsonProfile,
+                complete: function(r){
+
+                  console.log(r.responseText)
+
+
+                    }
+                });
+
+}
+
 
 
 
