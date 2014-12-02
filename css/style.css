@@ -6,6 +6,14 @@ body {
 	background: url("../img/bkg5.jpg");
 }
 
+#contentWindow{
+
+color: black;
+
+}
+
+
+
 h1{
 	font-size: 64px;
 	text-align: center;
