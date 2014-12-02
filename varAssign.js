@@ -133,8 +133,8 @@ function login(){
 
              var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
-                url: 'http://localhost/php/login.php',
-               // url: 'http://near-buy.me/php/login.php',
+                //url: 'http://near-buy.me/php/login.php',
+               url: 'http://near-buy.me/php/login.php',
                 data: profile,
                 complete: function(r){
 
