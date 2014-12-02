@@ -14,7 +14,7 @@ if (!$connection) {
 
 //	var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
 
-
+/*
 $username = $_POST['username'];
 $title = $_POST['title'];
 $description = $_POST['description'];
@@ -26,10 +26,10 @@ $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
 $userID = getUserID();
 $address = getAddress();
+*/
 
 
 
-/*
 $username = "alien";
 $title = "alien";
 $description = "alien";
@@ -41,7 +41,7 @@ $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
 $userID = getUserID();
 $address = getAddress();
-*/
+
 //get all teh other necessary info with some sql calls. Fill in the table.
 
 makeListing();
