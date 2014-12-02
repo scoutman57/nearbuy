@@ -276,7 +276,7 @@ if(login === true){
 
 function createListing(){
 
-var user = readCookie("username")
+var username = readCookie("username")
 
 var name = document.getElementById("listName").value;
 
