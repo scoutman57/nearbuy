@@ -43,6 +43,10 @@ createSession();
 
 	
 
+<<<<<<< HEAD:php/login.php.save
+=======
+	
+>>>>>>> b4e06340056cc081267dbf4eafc2dfe3740079d9:php/login.php
 echo "<!DOCTYPE html>";
 echo "<html>";
 echo "<head> ";
@@ -57,7 +61,14 @@ echo "<body>";
 	echo "<button onclick='getAddress()'>Find out what's nearbuy</button>";
 echo "</body>";
 echo "</html>";
+<<<<<<< HEAD:php/login.php.save
 	
+=======
+
+
+ 
+
+>>>>>>> b4e06340056cc081267dbf4eafc2dfe3740079d9:php/login.php
 
 } else {
 
