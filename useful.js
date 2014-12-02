@@ -7,7 +7,14 @@ function setCookie(cname) {
     document.cookie = "username="+cname;
 }
 
-function readCookie(name) {
+function setLatLngCookie(cname) {
+    
+
+    document.cookie = "latlng="+cname;
+}
+
+
+function readLatLngCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
@@ -90,13 +97,26 @@ console.log('breakpoint 1 works')
             var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
             
                 var latlng = coordinates[0]+", "+coordinates[1]
+
+                setLatLngCookie(latlng)
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
-             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+            
              //addressToConvert = latlng
 
 
 
-                    $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+          
+
+
+         });
+
+
+
+            var latlng = readLatLngCookie("latlng")
+
+             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+
+                      $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
                 url: 'http://near-buy.me/php/listing.php',
@@ -111,9 +131,6 @@ console.log('breakpoint 1 works')
 
                     }
                 });
-
-
-         });
 
 
                  // });
