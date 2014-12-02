@@ -159,11 +159,6 @@ function login(){
 
 }
 
-
-
-
-
-
 function logout(){
 
 sessionID = document.getElementById("sessionID").value;
@@ -184,6 +179,8 @@ xmlhttp.send(sessionID);
 	console.log(xmlhttp.responseText);
 
 }
+
+
 
 
 

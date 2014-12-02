@@ -2,6 +2,61 @@
 // ask the instantiated slider widget to tell you it's current value
 
 
+function createListing(){
+
+user = readCookie("username")
+
+var name = document.getElementById("listName").value;
+
+var descriptionText = document.getElementById("listDesc").value;
+var imageLink = document.getElementById("listPIc").value;
+
+var price = document.getElementById("listPrice").value;
+var address;
+var nameProfile = {username: username}
+var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
+
+
+    var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+    type: 'POST',
+    //url: 'http://localhost/php/handshake.php',
+    url: 'http://near-buy.me/php/getAddress.php',
+    data: nameProfile,
+    complete: function(r){
+
+            address = r.responseText
+
+            var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address}
+
+
+                var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+                type: 'POST',
+                //url: 'http://localhost/php/handshake.php',
+                url: 'http://near-buy.me/php/enterListing.php',
+                data: profile,
+                complete: function(r){
+
+
+
+
+
+                    }
+                });
+
+
+
+                  }
+    });
+
+
+
+
+}
+
+
+
+
+
 
 
 
