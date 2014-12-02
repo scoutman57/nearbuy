@@ -235,3 +235,10 @@ p{
 	text-align:justify;
     text-justify: distribute;
 }
+
+#back{
+	text-align: center;
+	position: center;
+	margin-left: auto;
+    margin-right: auto;
+}

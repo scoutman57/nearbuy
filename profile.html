@@ -13,17 +13,23 @@
     function tabletoggle(){
         $("#table").toggle(1000);
     };
+    function goback(){
+        window.location.href = 'splash.html';
+    }
 </script>
 </head>
 
 <body onload="genlist()">
 
-    <h1><span class="profilename"></span> Profile </h1>
+    <h1><span class="profilename"></span> Profile 
+    </h1>
+
+
+
     <input type="hidden" id="username" value="a">
     <div id="results"></div>
 
 
-<button onclick="tabletoggle()"></button>
 <table id="table">
 <tr>
     <th>Item</th>
@@ -35,20 +41,20 @@
     <th>Edit</th>
 </tr>
 <tr>
-    <td>Boot Strap and Iron Toes!</td>
+    <td>Boot Strap !</td>
     <td>$10.00</td>
-    <td>xx'xx"x...</td>
-    <td>www.</td>
+    <td>The docks</td>
+    <td>www.abc.com</td>
     <td>0</td>
-    <td class="desc">It goes on your foot! and then you walk in it. is this text hidden yet?</td>
+    <td class="desc">It keeps your boot on! Try it out. Is this text hidden yet?</td>
     <td><img src="img/del.png" class="del"></td>
 </tr>
 <tr>
-    <td>Boot</td>
+    <td>Hat</td>
     <td>$10.00</td>
-    <td>Yo mamma's house</td>
-    <td>www.</td>
-    <td>0</td>
+    <td>My head</td>
+    <td>n/a</td>
+    <td>5</td>
     <td class="desc">this one will have a different description with a different length so that you know its different!</td>
     <td><img src="img/del.png" class="del"></td>
 </tr>
@@ -74,6 +80,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <button onclick="codeAddress()">Submit</button>
     </form>
 </div>
+
+    <button id="back" onclick="goback()">Return to home</button>
+    <button onclick="tabletoggle()">Toggle</button>
+
+
+
 
 <script src='useful.js'></script>
     <script src='varAssign.js'></script>
