@@ -93,15 +93,15 @@ echo "<head> ";
      echo "<script src='varAssign.js'></script>";
      echo "<script src='example.js'></script>";
      echo "<script src='js/genlist.js'></script>";
-    echo"<title>SPLASH</title>";
+ echo"<title>SPLASH</title>";
 echo "</head>";
 echo "<body>";
 echo " <div class='large'>";	
 echo " <h1>Login success</h1>";
 echo '<button class="lgbutton" onclick="goToProfile()"><img src="img/list.png" class="lgicon">Manage your listings</button>';
-echo '<button class="lgbutton" onclick="getMap())"><img src="img/map.png" class="lgicon">Find out what\'s nearbuy</button>':
+echo "<button class='lgbutton' onclick='getMap())'><img src='img/map.png' class='lgicon'>Find out what's nearbuy</button>":
 echo"</div>";
-	echo "</body>";
+echo "</body>";
 echo "</html>";
 
 
