@@ -14,11 +14,17 @@ if (!$connection) {
    	 die("Connection failed: " . mysqli_connect_error());
 	}
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$email = $_POST['email'];
-$profileID = $_POST['profileID'];
-$address = $_POST['address'];
+//$username = $_POST['username'];
+//$password = $_POST['password'];
+//$email = $_POST['email'];
+//$profileID = $_POST['profileID'];
+//$address = $_POST['address'];
+
+$username = "f";
+$password = "f";
+$email = "f";
+$profileID = 68991;
+$address = "f";
 
 echo $address
 
@@ -37,7 +43,6 @@ $query = "UPDATE `user` SET `id`=$profileID,`username`='$username',`password`='$
 //$query = "INSERT INTO `user`(`id`, `username`,`password`,`email`,) VALUES '$memberID' , '$sessionID' " ;
 mysqli_query($connection, $query);
 
-$query = 
 
 //header('Location: success.html');
 
