@@ -16,7 +16,7 @@ if (!$connection) {
 
 //	var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
 
-
+/*
 $username = $_POST['username'];
 $title = $_POST['title'];
 $description = $_POST['description'];
@@ -28,18 +28,18 @@ $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
 $userID = getUserID();
 $address = getAddress();
+*/
 
 
 
 
-/*
-$username = "$_POST['username']";
-$title = $_POST['title'];
-$description = $_POST['description'];
-$image = $_POST['image'];
-$price = $_POST['price'];
-$address = $_POST['address'];
-$latlng = $_POST['latlng'];
+$username = "alien";
+$title = "alien";
+$description = "alien";
+$image = '';
+$price = 5;
+$address = "Area 51";
+$latlng = "45, 45";
 $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
 $userID = getUserID();
