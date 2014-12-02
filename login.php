@@ -36,37 +36,7 @@ $encryptedPassword = $row['password'];
 if($encryptedPassword == $password){
 
 createSession();
-
-<<<<<<< HEAD
-echo "<!DOCTYPE html>
-<html>
-<head>
-    <link href='css/style.css' rel='stylesheet'>
-    <script src='js/jquery-2.1.1.min.js'></script>
-         <script src='varAssign.js'></script>
-              <script src='example.js'></script>
-    <title>SPLASH</title>
-</head>
-<body>
-<div class='large'>
-	<h1>Login success</h1>
-	<button class='lgbutton' onclick='phptest.php'><img src='img/list.png' class='lgicon'>Manage your listings</button>
-	<button class='lgbutton' onclick='getMap()'><img src='img/map.png' class='lgicon'>Find out what's nearbuy</button>
-</div>
-</body>
-</html>";
-
-
-//header("Location: splash.html");
-
-
-} else if($encryptedPassword != $password) {
-
-
-echo "false";
-=======
 	
-
 echo "<!DOCTYPE html>";
 echo "<html>";
 echo "<head> ";
@@ -98,7 +68,7 @@ echo "<body>";
 	echo "<a href='www.near-buy.me'<button>Go Back</button></a>";
 echo "</body>";
 echo "</html>";
->>>>>>> 790ca3915c530dfe3f66392daed262407457251a
+
 	
 }
 
