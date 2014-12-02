@@ -65,7 +65,7 @@ echo "<head> ";
 echo "</head>";
 echo "<body>";
 	echo "<h1>Wrong Username or password</h1>";
-	echo "<a href='www.near-buy.me'<button>Go Back</button></a>";
+	echo "<a href='../index.html'<button>Go Back</button></a>";
 echo "</body>";
 echo "</html>";
 
