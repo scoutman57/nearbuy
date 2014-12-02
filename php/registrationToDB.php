@@ -37,7 +37,7 @@ $secretKey = $row['encryptionKey'];
 
 //echo $secretKey;
 
-$query="UPDATE `user` SET `id`=`$profileID`,`username`=`$username`,`password`=`$password`,`email`=`$email`,`address`=`$address`,`encryptionKey`=`$secretKey` WHERE `id`=`$profileID`";
+$query="UPDATE `user` SET `username`='$username',`password`='$password',`email`='$email',`address`='$address'  WHERE `id`=`$profileID`";
 //$query = "UPDATE `user` SET `id`=$profileID,`username`=$username,`password`=$password,`email`=$email,`address`=$address,`encryptionKey`=$keyQuery WHERE `id`=$profileID";
 
 
