@@ -4,11 +4,9 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 
-
-
-$servername = "localhost";
-$dbuser = 'root';
-$dbpass = '';
+$servername = "near-buy.me";
+$dbuser = 'admin';
+$dbpass = 'password';
 $dbname = "nearbuy";
 
 $connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
@@ -21,12 +19,9 @@ if (!$connection) {
 	}
 
 
-
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-//$username = "a";
-//$password ="d";
 $sessionID = getSessionID();
 $memberID = retrieveMemberId();
 $passQuery = "SELECT `password` FROM `user` WHERE `username`='$username'";
@@ -42,6 +37,7 @@ if($encryptedPassword == $password){
 
 createSession();
 
+<<<<<<< HEAD
 echo "<!DOCTYPE html>
 <html>
 <head>
@@ -68,6 +64,41 @@ echo "<!DOCTYPE html>
 
 
 echo "false";
+=======
+	
+
+echo "<!DOCTYPE html>";
+echo "<html>";
+echo "<head> ";
+    echo "<link href='css/style.css' rel='stylesheet'>";
+    echo "<script src='js/jquery-2.1.1.min.js'></script>";
+     echo "<script src='varAssign.js'></script>";
+    echo "<title>SPLASH</title>";
+echo "</head>";
+echo "<body>";
+	echo "<h1>Logged in successfully</h1>";
+	echo "<button>Manage your listings</button>";
+	echo "<button onclick='getAddress()'>Find out what's nearbuy</button>";
+echo "</body>";
+echo "</html>";
+	
+
+} else {
+
+	echo "<!DOCTYPE html>";
+echo "<html>";
+echo "<head> ";
+    echo "<link href='css/style.css' rel='stylesheet'>";
+    echo "<script src='js/jquery-2.1.1.min.js'></script>";
+     echo "<script src='varAssign.js'></script>";
+    echo "<title>SPLASH</title>";
+echo "</head>";
+echo "<body>";
+	echo "<h1>Wrong Username or password</h1>";
+	echo "<a href='www.near-buy.me'<button>Go Back</button></a>";
+echo "</body>";
+echo "</html>";
+>>>>>>> 790ca3915c530dfe3f66392daed262407457251a
 	
 }
 
