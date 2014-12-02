@@ -6,17 +6,24 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/genlist.js"></script>
+    <script src="js/tips.js"></script>
     <title>PROFILE</title>
-
+<script>
+    function tabletoggle(){
+        $("#table").toggle(1000);
+    };
+</script>
 </head>
 
 <body onload="genlist()">
 
     <h1><span class="profilename"></span> Profile </h1>
-    <input type="hidden" id="userID" value="1234">
+    <input type="hidden" id="username" value="a">
     <div id="results"></div>
 
-<table>
+
+<button onclick="tabletoggle()"></button>
+<table id="table">
 <tr>
     <th>Item</th>
     <th>Price</th>
@@ -56,22 +63,11 @@
         <input class="new" type="text" placeholder="Location" required/><br>
         <input class="new" type="text" placeholder="Link to Picture"/><br>
         <textarea class="newdesc" placeholder="Description"></textarea><br>
-        <button class="submit" action="genlist()">Submit</button>
+        <button class="submit" action="">Submit</button>
     </form>
 </div>
 
-<script type="text/javascript">
-    function downloadJSAtOnload() {
-        var element = document.createElement("script");
-        element.src = "js/tips.js";
-        document.body.appendChild(element);
-    }
-    if (window.addEventListener)
-        window.addEventListener("load", downloadJSAtOnload, false);
-    else if (window.attachEvent)
-        window.attachEvent("onload", downloadJSAtOnload);
-    else window.onload = downloadJSAtOnload;
-</script>
+
 
 </body>
 

@@ -1,7 +1,10 @@
 var user;
 
 function genlist(){
-	user = document.getElementById("userID").value;
+
+	$("#table").hide();
+
+	user = document.getElementById("username").value;
 	//output = document.getElementById("results");
 	//console.log(user);
 

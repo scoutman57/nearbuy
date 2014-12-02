@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 	$(".desc").hover(function(){
-
 		var element = $(this);
 		var offset = element.offset();
 		var toolTip = $("<div class='tooltip'></div>");
@@ -19,11 +18,11 @@ $(document).ready(function(){
 		$(this).children(".tooltip").remove(); 
 
 	});
-/*
+
 	$(".del").click(function(){
 		//$(this).parent().parent().remove();
 		$(this).parent().parent().hide(1000);
 		//ADD REMOVAL FROM DATABASE
-	});*/
+	});
 
 });

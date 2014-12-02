@@ -20,7 +20,7 @@ if (!$connection) {
 
 //echo "Database connection successful";
 
-$query = "SELECT * FROM info WHERE userID='$user'";
+$query = "SELECT * FROM info WHERE username='$user'";
 
 $result=mysqli_query($connection, $query);
 echo '
@@ -39,7 +39,7 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
     	//`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `viewcount`, `userID`, 'price'
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"]."</td><td>" . $row["price"] . "</td><td>" . $row["address"].  "</td><td>" . $row["imagelink"]. "</td><td>" . $row["viewcount"]. '</td><td class="desc">' . $row["description_text"]."</td>";
+        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"]."</td><td>" . $row["price"] . "</td><td>" . $row["address"].  "</td><td>" . $row["imagelink"]. "</td><td>" . $row["viewcount"]. '</td><td id="desc">' . $row["description_text"]."</td>";
     }
 } else {
     echo "0 results";
