@@ -36,6 +36,8 @@ console.log("makes it here to get coordinates")
 
             coords_obj = results[0].geometry.location;          
             coordinates = [coords_obj.k, coords_obj.B]
+
+            console.log(coordinates);
             callback(coordinates);
 
         } else {
