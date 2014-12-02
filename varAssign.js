@@ -138,13 +138,25 @@ function login(){
                 data: profile,
                 complete: function(r){
 
-                        console.log(r.responseText)
+                      //  console.log(r.responseText)
                         setCookie(user)
                      //   console.log(readCookie("username"))
 
 
+                     if(r.responseText === true){
+
+                        window.location.assign("splash2.html")
+
+                     } else {
+
+                        document.write(r.responseText)
+
+                     }
+
                      //   document.write("<p>holla</p>")
-                       document.write(r.responseText)
+                      
+
+                      // document.write(r.responseText)
 
                        //echoUsername();
 
