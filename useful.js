@@ -66,7 +66,7 @@ var latlng = coordinates[0] + ", "+coordinates[1]
 function addToDB(jsonProfile){
 console.log(jsonProfile.description)
     console.log(jsonProfile.username)
-    console.log(json.address)
+    console.log(jsonProfile.address)
 
 
                       $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
