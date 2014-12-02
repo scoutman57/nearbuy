@@ -39,7 +39,7 @@ console.log('breakpoint 1 works')
             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
 
-console.log('breakpoint 2 works')
+                      console.log('breakpoint 2 works')
 
                 var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
