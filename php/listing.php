@@ -22,6 +22,11 @@ $description = $_POST['description'];
 $image = $_POST['image'];
 $price = $_POST['price'];
 $address = $_POST['address'];
+$latlng = $_POST['latlng'];
+$upperBound = pow(2, 20);
+$id = rand(1, $upperBound);
+$userID = getUserID();
+$address = getAddress();
 
 var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
