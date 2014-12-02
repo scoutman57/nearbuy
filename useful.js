@@ -84,7 +84,8 @@ console.log('breakpoint 1 works')
 
             var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
             
-            var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
+                var latlng = coordinates[0]+", "+coordinates[1]
+            //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
 
             console.log(latlng)
             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
