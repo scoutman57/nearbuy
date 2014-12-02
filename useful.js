@@ -122,12 +122,12 @@ function initialize() {
   }
 
   
-
+codeAddress
 }
 
-function codeAddress(address) {
+function codeAddress() {
   //var address = document.getElementById('address').value;
-
+var address =  document.getElementById('listLoc').value;
   geocoder.geocode( { 'address': address}, function(results, status) {
     
     if (status == google.maps.GeocoderStatus.OK) {
@@ -144,8 +144,8 @@ var price = document.getElementById("listPrice").value;
 var nameProfile = {username: username}
 
 
-var address =  document.getElementById('listLoc').value;
-codeAddress(address)
+
+//codeAddress(address)
 
 
 coords_obj = results[0].geometry.location
@@ -175,7 +175,7 @@ $.ajax({ // sends a request to server, telling it to prepare a place in it. Assi
 
 
 
-        
+
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
           map: map,
