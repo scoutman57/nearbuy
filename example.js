@@ -1,12 +1,42 @@
 // Use it here to get the value after loading the widget
 // ask the instantiated slider widget to tell you it's current value
 
-var searchAddress =""; //script to change this
+
+
+
+
+function setCookie(cname) {
+    
+
+    document.cookie = "username="+cname;
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
+
+
+
+var searchAddress =getAddress(readCookie("username"), false); //script to change this
 var searchDistance = 1; 
 var zoomLevel = 15;
 
 
-function getAddress(username){
+
+
+function getAddress(username, shouldIInit){
 
 	var user = readCookie("username")
 	console.log(user)
@@ -22,9 +52,12 @@ var ajaxCall = $.ajax({
 
     searchAddress = r.responseText
    
-    //console.log(searchAddress)
+    console.log("SEARCH ADDRESS: " + searchAddress)
 
+if(shouldIInit === true){
    initialize2(searchDistance, searchAddress, array)
+}
+
 
     }
      });
@@ -35,9 +68,13 @@ var ajaxCall = $.ajax({
 function getMap(){
 
 	//console.log("the username is:"+readCookie("username"))
-	getAddress(readCookie("username"))
+	getAddress(readCookie("username"), false)
+
 	
 	window.location.assign("mappage.html");
+	setTimeout(initialize2(searchAddress, searchDistance), 1000);
+	
+
 
 }
 
@@ -204,7 +241,8 @@ searchAddress = newAddress;
 function initialize2(searchDistance, givenAddress, markers) {
 	//var address = "580 Ash Street Winnipeg MB";
 	
-	
+	console.log("THIS IS CALLED")
+	console.log(givenAddress)
 
 	//searchAddress = address
 	address = givenAddress

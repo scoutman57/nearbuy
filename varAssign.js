@@ -138,7 +138,7 @@ function login(){
 
                         console.log(r.responseText)
                         setCookie(user)
-                        console.log(readCookie("username"))
+                     //   console.log(readCookie("username"))
 
 
                      //   document.write("<p>holla</p>")
@@ -146,7 +146,7 @@ function login(){
 
                        //echoUsername();
 
-                       console.log("success! This is where you draw the login success or fail page!")
+                     //  console.log("success! This is where you draw the login success or fail page!")
                 }    
         
             });
