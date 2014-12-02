@@ -58,7 +58,7 @@ coords_obj = map.getCenter();
 var latlng = coordinates[0] + ", "+coordinates[1]
 
 
-    console.log(latlng)
+    console.log(coordinates)
              var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
              addToDB(profile)
 
