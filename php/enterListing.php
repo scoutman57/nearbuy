@@ -1,5 +1,7 @@
 <?php
 
+echo "TIS IT"
+/*
 $servername = "near-buy.me";
 $dbuser = 'admin';
 $dbpass = 'password';
@@ -29,7 +31,7 @@ $address = getAddress();
 */
 
 
-
+/*
 $username = "alien";
 $title = "alien";
 $description = "alien";
@@ -41,12 +43,12 @@ $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
 $userID = getUserID();
 $address = getAddress();
-
+*/
 //get all teh other necessary info with some sql calls. Fill in the table.
 
 
 
-
+/*
 function makeListing(){
 global $connection,$id, $userID, $username, $title, $description, $image, $price, $address, $latlng;
 
@@ -72,7 +74,7 @@ return  $usernameID;
 
 }
 makeListing();
-
+*/
 
 
 //var latlng = document.getElementById("loguser").value;
