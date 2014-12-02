@@ -27,7 +27,7 @@ $upperBound = pow(2, 20);
 $id = rand(1, $upperBound);
 $userID;
 
-getUserID();
+//getUserID();
 
 var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
@@ -45,7 +45,7 @@ echo "IT WORKED";
 
 }
 
-
+/*
 function getUserID(){
 global $connection, $username;
 
@@ -57,6 +57,7 @@ $userID = $row['userID'];
 
 
 }
+*/
 makeListing();
 
 ?>
