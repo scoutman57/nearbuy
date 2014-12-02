@@ -16,7 +16,9 @@
 </div>
 
 <script>
-$("div.msg").hide().fadeIn(1000).delay(1000).fadeOut(1000);
+$("div.msg").hide().fadeIn(1000).delay(1000).fadeOut(1000, function(){
+	window.location.href = 'http://near-buy.me';
+});
 </script>
 
 </body>
