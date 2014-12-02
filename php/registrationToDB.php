@@ -27,7 +27,7 @@ $email = "f";
 $profileID = '68991';
 $address = "f";
 */
-echo $address
+echo $address;
 
 $keyQuery = "SELECT `encryptionKey` FROM `user` WHERE `id`=$profileID";
 
