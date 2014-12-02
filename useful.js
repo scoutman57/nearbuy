@@ -124,8 +124,7 @@ console.log('breakpoint 3 works')
 
 
 
-function codeAddress(address) 
-{
+function codeAddress(address) {
   geocoder.geocode( {address:address}, function(results, status) 
   {
 
@@ -134,6 +133,6 @@ function codeAddress(address)
 
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
-   }
-  });
+   });
 }
+
