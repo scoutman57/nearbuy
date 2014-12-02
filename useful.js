@@ -30,6 +30,45 @@ function eraseCookie(name) {
 }
 
 
+var geocoder;
+var map;
+
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+
+function codeAddress() {
+  var address = document.getElementById('listLoc').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+
+    if (status == google.maps.GeocoderStatus.OK) {
+
+
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+          createListing()
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
 
 function createListing(){
 
@@ -39,11 +78,18 @@ var descriptionText = document.getElementById("listDesc").value;
 var imageLink = document.getElementById("listPIc").value;
 var price = document.getElementById("listPrice").value;
 //var givenAddress document.getElementById('listLoc').value;
-var address =  document.getElementById('listLoc').value;
+//var address =  document.getElementById('listLoc').value;
 //var address; // for if we want to grab their home address
 var nameProfile = {username: username}
 var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
 
+
+coords_obj = map.getCenter();          
+            coordinates = [coords_obj.k, coords_obj.B]
+            
+var latlng = coordinates[0] + ", "+coordinates[1]
+
+console.log(latlng)
 
 console.log('breakpoint 1 works')
 
@@ -61,26 +107,8 @@ console.log('breakpoint 1 works')
 
 
             //address = r.responseText
-              geocoder = new google.maps.Geocoder();
-              codeAddress(address)
-
-            var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
-            
-                var latlng = coordinates[0]+", "+coordinates[1]
 
 
-                console.log(latlng)
-                setLatLngCookie(latlng)
-            //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
-            
-             //addressToConvert = latlng
-
-
-
-          
-
-
-         });
 
 
 
@@ -110,86 +138,3 @@ console.log('breakpoint 1 works')
 
 
 
-var geocoder;
-var map;
-
-function initialize() {
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(-34.397, 150.644);
-  var mapOptions = {
-    zoom: 8,
-    center: latlng
-  }
-
-  console.log("holla")
-codeAddress()
-}
-
-
-
-
-function codeAddress() {
-    console.log("test")
-  //var address = document.getElementById('address').value;
-var address =  document.getElementById('listLoc').value;
-  geocoder.geocode( { 'address': address}, function(results, status) {
-        console.log(results)
-        console.log(status)
-    if (status == google.maps.GeocoderStatus.OK) {
-
-        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-var username = readCookie("username")
-var name = document.getElementById("listName").value;
-var descriptionText = document.getElementById("listDesc").value;
-var imageLink = document.getElementById("listPIc").value;
-var price = document.getElementById("listPrice").value;
-//var givenAddress document.getElementById('listLoc').value;
-//var address; // for if we want to grab their home address
-var nameProfile = {username: username}
-
-
-
-//codeAddress(address)
-
-
-coords_obj = results[0].geometry.location
-
-coordinates = [coords_obj.k, coords_obj.B]
-
-console.log(coordinates)
-
-
-
-
-var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
-
-$.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
-                type: 'POST',
-                //url: 'http://localhost/php/handshake.php',
-                url: 'http://near-buy.me/php/listing.php',
-                data: profile,
-                complete: function(r){
-
-                  console.log(r.responseText)
-
-
-                    }
-                });
-
-
-
-
-
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-
-//google.maps.event.addDomListener(window, 'load', initialize);
