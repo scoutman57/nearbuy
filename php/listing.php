@@ -33,7 +33,7 @@ var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
 
 
-$ad ='
+$ad =echo '
 <!DOCTYPE html>
 <html>
 
