@@ -19,6 +19,9 @@ if (!$connection) {
 $username = $_POST['username'];
 $title = $_POST['title'];
 $description = $_POST['description'];
+$image = $_POST['image'];
+$price = $_POST['price'];
+$address = $_POST['address'];
 
 var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
