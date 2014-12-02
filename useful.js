@@ -84,6 +84,7 @@ console.log('breakpoint 1 works')
             
             var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
 
+            console.log(latlng)
             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
 
