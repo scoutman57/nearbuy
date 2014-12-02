@@ -1,4 +1,4 @@
-var addressToConver
+var addressToConvert
 
 
 function setCookie(cname) {
@@ -59,20 +59,16 @@ console.log("makes it here to get coordinates")
 function createListing(){
 
 var username = readCookie("username")
-
 var name = document.getElementById("listName").value;
-
 var descriptionText = document.getElementById("listDesc").value;
 var imageLink = document.getElementById("listPIc").value;
-
 var price = document.getElementById("listPrice").value;
 //var givenAddress document.getElementById('listLoc').value;
 var address =  document.getElementById('listLoc').value;
 //var address; // for if we want to grab their home address
-
 var nameProfile = {username: username}
-
 var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
+
 
 console.log('breakpoint 1 works')
 
@@ -85,8 +81,8 @@ console.log('breakpoint 1 works')
     complete: function(r){
 */
 
-             geocoder = new google.maps.Geocoder();
-  codeAddress( address);//call the function
+   //          geocoder = new google.maps.Geocoder();
+//  codeAddress( address);//call the function
 
 
             //address = r.responseText
@@ -96,7 +92,13 @@ console.log('breakpoint 1 works')
                 var latlng = coordinates[0]+", "+coordinates[1]
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
 
-            console.log(latlng)
+             addressToConvert = latlng)};
+
+
+
+            console.log(addressToConvert)
+
+            var latlng = addressToConvert
             
             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
@@ -118,7 +120,7 @@ console.log('breakpoint 3 works')
 
                     }
                 });
-                  });
+                 // });
 
 }
 
