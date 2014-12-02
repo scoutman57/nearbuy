@@ -4,7 +4,7 @@
 
 function createListing(){
 
-user = readCookie("username")
+var user = readCookie("username")
 
 var name = document.getElementById("listName").value;
 
