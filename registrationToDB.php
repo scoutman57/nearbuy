@@ -1,9 +1,10 @@
 <?php
 
 
-$servername = "localhost";
-$dbuser = 'root';
-$dbpass = '';
+
+$servername = "near-buy.me";
+$dbuser = 'admin';
+$dbpass = 'password';
 $dbname = "nearbuy";
 
   $connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);

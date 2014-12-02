@@ -44,7 +44,7 @@ function getAddress(username, shouldIInit){
 
 var ajaxCall = $.ajax({
     type: 'POST',
-    url: 'http://localhost/php/getAddress.php',
+    url: 'http://near-buy.me/php/getAddress.php',
     data: profile,
     complete: function(r){
 
@@ -128,7 +128,7 @@ function populateArray(){
 //This gets the entire array from our db
 var ajaxCall = $.ajax({
     type: 'GET',
-    url: 'http://localhost/php/dbToArray.php',
+    url: 'http://near-buy.me/php/dbToArray.php',
     complete: function(r){
 
     
@@ -147,7 +147,7 @@ var ajaxCall = $.ajax({
 function redoDistance(newDistance){
 $.ajax({
     type: 'GET',
-    url: 'http://localhost/php/dbToArray.php',
+    url: 'http://near-buy.me/php/dbToArray.php',
     complete: function(r){
 
     
@@ -169,7 +169,7 @@ $.ajax({
 function redoCircle(newAddress){
 $.ajax({
     type: 'GET',
-    url: 'http://localhost/php/dbToArray.php',
+    url: 'http://near-buy.me/php/dbToArray.php',
     complete: function(r){
 
     
@@ -212,7 +212,7 @@ function search(searchTerm){
 function changeAddress(newAddress){
 $.ajax({
     type: 'GET',
-    url: 'http://localhost/php/dbToArray.php',
+    url: 'http://near-buy.me/php/dbToArray.php',
     complete: function(r){
 
     
