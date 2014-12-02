@@ -1,3 +1,5 @@
+var addressToConver
+
 
 function setCookie(cname) {
     
@@ -82,6 +84,11 @@ console.log('breakpoint 1 works')
     data: nameProfile,
     complete: function(r){
 */
+
+             geocoder = new google.maps.Geocoder();
+  codeAddress( address);//call the function
+}
+
             //address = r.responseText
 
             var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
@@ -116,3 +123,17 @@ console.log('breakpoint 3 works')
 }
 
 
+
+function codeAddress(address) 
+{
+  geocoder.geocode( {address:address}, function(results, status) 
+  {
+
+    addressToConvert = results[0].geometry.location
+    console.log(addressToConvert)
+
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+   }
+  });
+}
