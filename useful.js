@@ -155,7 +155,7 @@ function initialize() {
     //center: latlng
   }
 //  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-}
+
 
 function codeAddress(address) {
 
