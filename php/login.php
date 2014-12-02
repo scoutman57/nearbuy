@@ -100,9 +100,7 @@ echo "<body>";
 echo "</body>";
 echo "</html>";
 	
-
 } else {
-
 
 	echo "<!DOCTYPE html>";
 echo "<html>";
