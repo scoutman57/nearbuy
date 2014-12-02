@@ -114,17 +114,16 @@ console.log('breakpoint 1 works')
 
             var latlng = readLatLngCookie("latlng")
 
+            console.log(latlng)
              var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
+             console.log(profile)
                       $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
                 url: 'http://near-buy.me/php/listing.php',
                 data: profile,
                 complete: function(r){
-
-
-                console.log('breakpoint 3 works')
 
                   console.log(r.responseText)
 
