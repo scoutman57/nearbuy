@@ -395,7 +395,7 @@ console.log(searchCircle + " is printed")
             		position: newLatLongMarker, //loops through and adds the position of each of these markers
             		map: map,
             		title: markers[i].name,
-            		info: markers[i].description
+            		info: markers[i].description_text
 
         		});
 
