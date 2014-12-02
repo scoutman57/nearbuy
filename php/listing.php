@@ -32,7 +32,7 @@ $id = rand(1, $upperBound);
 var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
 
-
+/*
 $ad ='<!DOCTYPE html>
 <html>
 
@@ -61,10 +61,11 @@ $ad ='<!DOCTYPE html>
 </div>
 </body>
 </html>';
+*/
 
 //$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `userID`, `price`) VALUES ('$id','$latlng','$title','$address','$description','$image','$userID','$price')";
 
-$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `viewcount`, `username`, `price`,`ad`) VALUES ('$id','$latlng','$title','$address','$description','$image','$price','$username','$price','$ad')";
+$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `viewcount`, `username`, `price`) VALUES ('$id','$latlng','$title','$address','$description','$image','$price','$username','$price')";
 
 
 mysqli_query($connection, $query);
