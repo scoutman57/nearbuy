@@ -62,8 +62,9 @@ function register(){
     data: profile,
     complete: function(r){
         
-        console.log(profile)
+        //console.log(profile)
 
+        console.log(r.responseText)
         //console.log("php echos:" +r.responseText)
       //console.log("success! This is where you draw the success page!")
         window.location.assign("success.html")
