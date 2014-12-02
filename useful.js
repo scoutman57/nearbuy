@@ -131,8 +131,6 @@ function codeAddress(address) {
     addressToConvert = results[0].geometry.location
     console.log(addressToConvert)
 
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-   });
+  });
 }
 
