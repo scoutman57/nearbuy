@@ -133,8 +133,8 @@ function login(){
 
              var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
-                //url: 'http://near-buy.me/php/login.php',
-               url: 'http://near-buy.me/php/login.php',
+            url: 'http://near-buy.me/login.php',
+               //url: 'http://near-buy.me/php/login.php',
                 data: profile,
                 complete: function(r){
 
@@ -143,15 +143,10 @@ function login(){
                      //   console.log(readCookie("username"))
 
 
-                     if(r.responseText === true){
-
-                        window.location.assign("splash2.html")
-
-                     } else {
 
                         document.write(r.responseText)
 
-                     }
+            
 
                      //   document.write("<p>holla</p>")
                       
