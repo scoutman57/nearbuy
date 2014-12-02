@@ -6,6 +6,7 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/tips.js"></script>
+    <script src="js/genlist.js"></script>
     <title>PROFILE</title>
 
 </head>
@@ -13,6 +14,8 @@
 <body>
 
     <h1><span class="profilename"></span> Profile </h1>
+    <input type="hidden" id="userID" value="1234">
+    <button onclick="genlist()">TEST BUTTON</button>
 
 <table>
 <tr>
@@ -54,7 +57,7 @@
         <input class="new" type="text" placeholder="Location" required/><br>
         <input class="new" type="text" placeholder="Link to Picture"/><br>
         <textarea class="newdesc" placeholder="Description"></textarea><br>
-        <button class="submit">Submit</button>
+        <button class="submit" action="genlist()">Submit</button>
     </form>
 </div>
 
