@@ -39,17 +39,15 @@ var map;
 
 function createListing(map){
 
+
+
 var username = readCookie("username")
-var name = document.getElementById("listName").value;
-var descriptionText = document.getElementById("listDesc").value;
-var imageLink = document.getElementById("listPIc").value;
-var price = document.getElementById("listPrice").value;
-  var address = document.getElementById('listLoc').value;
+
 //var givenAddress document.getElementById('listLoc').value;
 //var address =  document.getElementById('listLoc').value;
 //var address; // for if we want to grab their home address
 var nameProfile = {username: username}
-var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
+//var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
 
 
 coords_obj = map.getCenter();          
@@ -59,7 +57,9 @@ var latlng = coordinates[0] + ", "+coordinates[1]
 
 
     console.log(coordinates)
-             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+    console.log(name)
+    console.log(address)
+             var profile = {username: username, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
              addToDB(profile)
 
 /*
@@ -103,6 +103,11 @@ function addToDB(jsonProfile){
 }
 
 
+var name;
+var descriptionText;
+var imageLink;
+var price;
+  var address;
 
 
 
@@ -118,7 +123,12 @@ function initialize() {
 
 
 function codeAddress() {
-  var address = document.getElementById('listLoc').value;
+ address = document.getElementById('listLoc').value;
+  name = document.getElementById("listName").value;
+ descriptionText = document.getElementById("listDesc").value;
+ imageLink = document.getElementById("listPIc").value;
+ price = document.getElementById("listPrice").value;
+ address = document.getElementById('listLoc').value;
   geocoder.geocode( { 'address': address}, function(results, status) {
 
     if (status == google.maps.GeocoderStatus.OK) {
