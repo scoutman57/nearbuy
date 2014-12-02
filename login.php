@@ -37,22 +37,30 @@ if($encryptedPassword == $password){
 
 createSession();
 	
+
+	
 echo "<!DOCTYPE html>";
 echo "<html>";
 echo "<head> ";
-    echo "<link href='css/style.css' rel='stylesheet'>";
+   echo "<link href='../css/style.css' rel='stylesheet'>";
     echo "<script src='js/jquery-2.1.1.min.js'></script>";
      echo "<script src='varAssign.js'></script>";
-      echo "<script src='example.js'></script>";
-    echo "<title>SPLASH</title>";
+     echo "<script src='example.js'></script>";
+     echo "<script src='js/genlist.js'></script>";
+ echo"<title>SPLASH</title>";
 echo "</head>";
 echo "<body>";
-	echo "<h1>Logged in successfully</h1>";
-	echo "<button>Manage your listings</button>";
-	echo "<button onclick='getAddress()'>Find out what's nearbuy</button>";
+echo " <div class='large'>";	
+echo " <h1>Login success</h1>";
+echo '<button class="lgbutton" onclick="goToProfile()"><img src="img/list.png" class="lgicon">Manage your listings</button>';
+echo "<button class='lgbutton' onclick='getMap())'><img src='img/map.png' class='lgicon'>Find out what's nearbuy</button>";
+echo"</div>";
 echo "</body>";
 echo "</html>";
-	
+
+
+ 
+
 
 } else {
 
@@ -62,12 +70,11 @@ echo "<head> ";
     echo "<link href='css/style.css' rel='stylesheet'>";
     echo "<script src='js/jquery-2.1.1.min.js'></script>";
      echo "<script src='varAssign.js'></script>";
-    echo "<script src='example.js'></script>";
     echo "<title>SPLASH</title>";
 echo "</head>";
 echo "<body>";
 	echo "<h1>Wrong Username or password</h1>";
-	echo "<a href='../index.html'<button>Go Back</button></a>";
+	echo "<a href='./index.html'> <button>Go Back</button></a>";
 echo "</body>";
 echo "</html>";
 
