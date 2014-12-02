@@ -98,6 +98,8 @@ console.log('breakpoint 1 works')
             
                 var latlng = coordinates[0]+", "+coordinates[1]
 
+
+                console.log(latlng)
                 setLatLngCookie(latlng)
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
             
