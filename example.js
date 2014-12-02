@@ -22,14 +22,14 @@ var profile = {username: user, title: name, description: descriptionText, image:
 
 console.log('breakpoint 1 works')
 
-/*
-    var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
-    type: 'POST',
+
+    //var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+    //type: 'POST',
     //url: 'http://localhost/php/handshake.php',
-    url: 'http://near-buy.me/php/getAddress.php',
-    data: nameProfile,
-    complete: function(r){
-*/
+    //url: 'http://near-buy.me/php/getAddress.php',
+   // data: nameProfile,
+//    complete: function(r){
+
             //address = r.responseText
 
             var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
