@@ -91,23 +91,12 @@ console.log('breakpoint 1 works')
             
                 var latlng = coordinates[0]+", "+coordinates[1]
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
-
+             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
              //addressToConvert = latlng
 
-             return latlng});
 
 
-
-            console.log(coordinates)
-
-            var latlng = addressToConvert
-            
-            var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
-
-
-                      console.log('breakpoint 2 works')
-
-                var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+                    $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
                 url: 'http://near-buy.me/php/listing.php',
@@ -122,6 +111,11 @@ console.log('breakpoint 1 works')
 
                     }
                 });
+
+
+         });
+
+
                  // });
 
 }
