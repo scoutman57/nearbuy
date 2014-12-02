@@ -137,9 +137,14 @@ var address =  document.getElementById('listLoc').value;
 codeAddress(address)
 
 
-var latlng = map.getCenter()
+coords_obj = map.getCenter()
 
-console.log(latlng)
+coordinates = [coords_obj.k, coords_obj.B]
+
+console.log(coordinates)
+
+
+
 
 var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
