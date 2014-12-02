@@ -69,7 +69,7 @@ console.log('breakpoint 3 works')
 
 
 
-
+/*
 function setCookie(cname) {
     
 
@@ -92,7 +92,7 @@ function eraseCookie(name) {
 }
 
 
-
+*/
 
 var searchAddress =getAddress(readCookie("username"), false); //script to change this
 var searchDistance = 1; 
