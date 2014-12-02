@@ -88,7 +88,6 @@ echo "<!DOCTYPE html>";
 echo "<html>";
 echo "<head> ";
    echo "<link href='../css/style.css' rel='stylesheet'>";
-    echo "<link href='style.css' rel='stylesheet'>";
     echo "<script src='js/jquery-2.1.1.min.js'></script>";
      echo "<script src='varAssign.js'></script>";
      echo "<script src='example.js'></script>";
