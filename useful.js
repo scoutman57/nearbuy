@@ -61,30 +61,12 @@ var latlng = coordinates[0] + ", "+coordinates[1]
     console.log(address)
              var profile = {username: username, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
              addToDB(profile)
-
-/*
-                
-
-                      $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
-                type: 'POST',
-                //url: 'http://localhost/php/handshake.php',
-                url: 'http://near-buy.me/php/listing.php',
-                data: profile,
-                complete: function(r){
-
-                  console.log(r.responseText)
-
-
-                    }
-                });
-
-*/
-                 // });
-
 }
 
 function addToDB(jsonProfile){
-
+console.log(jsonProfile.description)
+    console.log(username.username)
+    console.log(address.address)
 
 
                       $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
@@ -124,7 +106,7 @@ function initialize() {
 
 function codeAddress() {
  address = document.getElementById('listLoc').value;
-  name = document.getElementById("listName").value;
+name = document.getElementById("listName").value;
  descriptionText = document.getElementById("listDesc").value;
  imageLink = document.getElementById("listPIc").value;
  price = document.getElementById("listPrice").value;
@@ -150,8 +132,6 @@ function codeAddress() {
     }
   });
 }
-
-google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
