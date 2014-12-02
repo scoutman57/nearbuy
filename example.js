@@ -12,21 +12,29 @@ var descriptionText = document.getElementById("listDesc").value;
 var imageLink = document.getElementById("listPIc").value;
 
 var price = document.getElementById("listPrice").value;
-var address;
+//var givenAddress document.getElementById('listLoc').value;
+var address =  document.getElementById('listLoc').value;
+//var address; // for if we want to grab their home address
+
 var nameProfile = {username: username}
+
 var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
 
-
+/*
     var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
     //url: 'http://localhost/php/handshake.php',
     url: 'http://near-buy.me/php/getAddress.php',
     data: nameProfile,
     complete: function(r){
+*/
+            //address = r.responseText
 
-            address = r.responseText
+            var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
+            
+            var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
 
-            var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address}
+            var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
 
                 var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
@@ -36,22 +44,17 @@ var profile = {username: user, title: name, description: descriptionText, image:
                 data: profile,
                 complete: function(r){
 
-
-
+                  console.log(r.responseText)
 
 
                     }
                 });
-
-
-
-                  }
-    });
-
-
-
+                  });
 
 }
+   // });
+
+//}
 
 
 
