@@ -33,8 +33,6 @@ var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
 
 
-
-function makeListing(){
 global $connection,$id, $userID, $username, $title, $description, $image, $price, $address, $latlng;
 
 
@@ -44,7 +42,7 @@ mysqli_query($connection, $query);
 
 echo "IT WORKED";
 
-}
+
 
 /*
 function getUserID(){
@@ -59,6 +57,5 @@ $userID = $row['userID'];
 
 }
 */
-makeListing();
 
 ?>
