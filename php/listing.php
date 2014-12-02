@@ -38,7 +38,7 @@ global $connection,$id, $userID, $username, $title, $description, $image, $price
 
 //$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `userID`, `price`) VALUES ('$id','$latlng','$title','$address','$description','$image','$userID','$price')";
 
-$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `viewcount`, `username`, `price`) VALUES ($id,$latlng,$title,$address,$description,$image,$price,$username,$price)";
+$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `viewcount`, `username`, `price`) VALUES ('$id','$latlng','$title','$address','$description','$image','$price','$username','$price')";
 
 
 mysqli_query($connection, $query);
