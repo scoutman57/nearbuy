@@ -1,3 +1,5 @@
+var addressToConvert
+
 
 function setCookie(cname) {
     
@@ -5,7 +7,14 @@ function setCookie(cname) {
     document.cookie = "username="+cname;
 }
 
-function readCookie(name) {
+function setLatLngCookie(cname) {
+    
+
+    document.cookie = "latlng="+cname;
+}
+
+
+function readLatLngCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
@@ -22,53 +31,19 @@ function eraseCookie(name) {
 
 
 
-
-
-function getCoordinates(address, callback){
-
-console.log("makes it here to get coordinates")
-    var coordinates;
-
-    geocoder = new google.maps.Geocoder();
-    geocoder.geocode({address: address}, function(results,status){ 
-
-        if (status == google.maps.GeocoderStatus.OK) {  //If the geocode was okay, we can return the object
-
-            coords_obj = results[0].geometry.location;          
-            coordinates = [coords_obj.k, coords_obj.B]
-
-            console.log(coordinates);
-            callback(coordinates);
-
-        } else {
-        alert(" The Geocoding didn't work ")
-        } 
-
-    });
-
-    
-    return coordinates;
-}
-
-
-
 function createListing(){
 
 var username = readCookie("username")
-
 var name = document.getElementById("listName").value;
-
 var descriptionText = document.getElementById("listDesc").value;
 var imageLink = document.getElementById("listPIc").value;
-
 var price = document.getElementById("listPrice").value;
 //var givenAddress document.getElementById('listLoc').value;
 var address =  document.getElementById('listLoc').value;
 //var address; // for if we want to grab their home address
-
 var nameProfile = {username: username}
-
 var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
+
 
 console.log('breakpoint 1 works')
 
@@ -80,36 +55,136 @@ console.log('breakpoint 1 works')
     data: nameProfile,
     complete: function(r){
 */
+
+   //          geocoder = new google.maps.Geocoder();
+//  codeAddress( address);//call the function
+
+
             //address = r.responseText
+              geocoder = new google.maps.Geocoder();
+              codeAddress(address)
 
             var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
             
                 var latlng = coordinates[0]+", "+coordinates[1]
+
+
+                console.log(latlng)
+                setLatLngCookie(latlng)
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
+            
+             //addressToConvert = latlng
+
+
+
+          
+
+
+         });
+
+
+
+            var latlng = readLatLngCookie("latlng")
 
             console.log(latlng)
-            var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
-
-                      console.log('breakpoint 2 works')
-
-                var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+             console.log(profile)
+                      $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
                 url: 'http://near-buy.me/php/listing.php',
                 data: profile,
                 complete: function(r){
 
+                  console.log(r.responseText)
 
-console.log('breakpoint 3 works')
+
+                    }
+                });
+
+
+                 // });
+
+}
+
+
+
+var geocoder;
+var map;
+
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
+  }
+
+  console.log(holla)
+codeAddress()
+}
+
+function codeAddress() {
+  //var address = document.getElementById('address').value;
+var address =  document.getElementById('listLoc').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    
+    if (status == google.maps.GeocoderStatus.OK) {
+
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+var username = readCookie("username")
+var name = document.getElementById("listName").value;
+var descriptionText = document.getElementById("listDesc").value;
+var imageLink = document.getElementById("listPIc").value;
+var price = document.getElementById("listPrice").value;
+//var givenAddress document.getElementById('listLoc').value;
+//var address; // for if we want to grab their home address
+var nameProfile = {username: username}
+
+
+
+//codeAddress(address)
+
+
+coords_obj = results[0].geometry.location
+
+coordinates = [coords_obj.k, coords_obj.B]
+
+console.log(coordinates)
+
+
+
+
+var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+
+$.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+                type: 'POST',
+                //url: 'http://localhost/php/handshake.php',
+                url: 'http://near-buy.me/php/listing.php',
+                data: profile,
+                complete: function(r){
 
                   console.log(r.responseText)
 
 
                     }
                 });
-                  });
 
+
+
+
+
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }
 
-
+//google.maps.event.addDomListener(window, 'load', initialize);
