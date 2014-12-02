@@ -1,9 +1,66 @@
 // Use it here to get the value after loading the widget
 // ask the instantiated slider widget to tell you it's current value
 
+/*
+function createListing(){
+
+var username = readCookie("username")
+
+var name = document.getElementById("listName").value;
+
+var descriptionText = document.getElementById("listDesc").value;
+var imageLink = document.getElementById("listPIc").value;
+
+var price = document.getElementById("listPrice").value;
+//var givenAddress document.getElementById('listLoc').value;
+var address =  document.getElementById('listLoc').value;
+//var address; // for if we want to grab their home address
+
+var nameProfile = {username: username}
+
+var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price}
+
+console.log('breakpoint 1 works')
 
 
+  //  var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+    //type: 'POST',
+    ////url: 'http://localhost/php/handshake.php',
+    //url: 'http://near-buy.me/php/getAddress.php',
+    //data: nameProfile,
+   /// complete: function(r){
+//
+            //address = r.responseText
 
+            var coordinates = getCoordinates(address, function(coordinates){ //This is the callback function from when we asked for the address
+            
+            var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
+
+            var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
+
+
+                      console.log('breakpoint 2 works')
+
+                var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
+                type: 'POST',
+                //url: 'http://localhost/php/handshake.php',
+                url: 'http://near-buy.me/php/enterListing.php',
+                data: profile,
+                complete: function(r){
+
+
+console.log('breakpoint 3 works')
+
+                  console.log(r.responseText)
+
+
+                    }
+                });
+                  });
+
+}
+
+*/
 
 function setCookie(cname) {
     
@@ -39,7 +96,7 @@ var zoomLevel = 15;
 function getAddress(username, shouldIInit){
 
 	var user = readCookie("username")
-	console.log(user)
+	//console.log(user)
 	var profile = {username: user}
 
 var ajaxCall = $.ajax({
@@ -82,6 +139,7 @@ function getMap(){
 
 function getCoordinates(address, callback){
 
+console.log("makes it here to get coordinates")
 	var coordinates;
 
 	geocoder = new google.maps.Geocoder();
@@ -241,8 +299,8 @@ searchAddress = newAddress;
 function initialize2(searchDistance, givenAddress, markers) {
 	//var address = "580 Ash Street Winnipeg MB";
 	
-	console.log("THIS IS CALLED")
-	console.log(givenAddress)
+	//console.log("THIS IS CALLED")
+	//console.log(givenAddress)
 
 	//searchAddress = address
 	address = givenAddress
