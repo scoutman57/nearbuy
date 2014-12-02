@@ -28,11 +28,11 @@ $profileID = '68991';
 $address = "f";
 */
 
-echo $username;
-echo $password;
-echo $email;
-echo $profileID;
-echo $address;
+//echo $username;
+//echo $password;
+//echo $email;
+//echo $profileID;
+//echo $address;
 
 
 
