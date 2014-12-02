@@ -36,25 +36,36 @@ $encryptedPassword = $row['password'];
 if($encryptedPassword == $password){
 
 createSession();
-	
-echo "<!DOCTYPE html>";
-echo "<html>";
-echo "<head> ";
-   echo "<link href='../css/style.css' rel='stylesheet'>";
-    echo "<script src='js/jquery-2.1.1.min.js'></script>";
-     echo "<script src='varAssign.js'></script>";
-     echo "<script src='example.js'></script>";
-     echo "<script src='js/genlist.js'></script>";
- echo"<title>SPLASH</title>";
-echo "</head>";
-echo "<body>";
-echo " <div class='large'>";	
-echo " <h1>Login success</h1>";
-echo '<button class="lgbutton" onclick="goToProfile()"><img src="img/list.png" class="lgicon">Manage your listings</button>';
-echo "<button class='lgbutton' onclick='getMap())'><img src='img/map.png' class='lgicon'>Find out what's nearbuy</button>";
-echo"</div>";
-echo "</body>";
-echo "</html>";
+	echo '
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js"></script>
+
+<link href="../css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="js/jquery-2.1.1.min.js"></script>
+     <script src="varAssign.js"></script>
+     <script src="example.js"></script>
+     <script src="js/genlist.js"></script>
+    <title>SPLASH</title>
+ 
+</head>
+
+<body>
+
+<div class="large">
+	<h1>Login success</h1>
+	<button class="lgbutton" onclick="phptest.php"><img src="img/list.png" class="lgicon">Manage your listings</button>
+	<button class="lgbutton" onclick="gotomap.php"><img src="img/map.png" class="lgicon">Find out what'.'s nearbuy</button>
+</div>
+
+</body>
+
+</html>'
 
 
  
