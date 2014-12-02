@@ -16,18 +16,9 @@ if (!$connection) {
 	}
 
 
-$username = "alien";
-$title = "alien";
-$description = "alien";
-$image;
-$price = 5;
-$address = "Area 51";
-$latlng = "45, 45";
-$upperBound = pow(2, 20);
-$id = rand(1, $upperBound);
-$userID = getUserID();
-$address = getAddress();
-
+$username = $_POST['username'];
+$title = $_POST['title'];
+$description = $_POST['description'];
 
 var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
