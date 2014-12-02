@@ -1,6 +1,6 @@
 // Use it here to get the value after loading the widget
 // ask the instantiated slider widget to tell you it's current value
-
+/*
 
 function createListing(){
 
@@ -63,7 +63,7 @@ console.log('breakpoint 3 works')
 
 //}
 
-
+*/
 
 
 
@@ -104,7 +104,7 @@ var zoomLevel = 15;
 function getAddress(username, shouldIInit){
 
 	var user = readCookie("username")
-	console.log(user)
+	//console.log(user)
 	var profile = {username: user}
 
 var ajaxCall = $.ajax({
@@ -306,8 +306,8 @@ searchAddress = newAddress;
 function initialize2(searchDistance, givenAddress, markers) {
 	//var address = "580 Ash Street Winnipeg MB";
 	
-	console.log("THIS IS CALLED")
-	console.log(givenAddress)
+	//console.log("THIS IS CALLED")
+	//console.log(givenAddress)
 
 	//searchAddress = address
 	address = givenAddress
