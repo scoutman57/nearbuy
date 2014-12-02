@@ -72,7 +72,7 @@ function getMap(){
 
 	
 	window.location.assign("mappage.html");
-	setTimeout(initialize2(searchAddress, searchDistance), 1000);
+	setTimeout(initialize2(searchAddress, searchDistance), 100);
 	
 
 
