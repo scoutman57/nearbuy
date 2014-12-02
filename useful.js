@@ -37,7 +37,7 @@ var map;
 
 
 
-function createListing(){
+function createListing(map){
 
 var username = readCookie("username")
 var name = document.getElementById("listName").value;
@@ -59,26 +59,6 @@ var latlng = coordinates[0] + ", "+coordinates[1]
 console.log(latlng)
 
 console.log('breakpoint 1 works')
-
-/*
-    var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
-    type: 'POST',
-    //url: 'http://localhost/php/handshake.php',
-    url: 'http://near-buy.me/php/getAddress.php',
-    data: nameProfile,
-    complete: function(r){
-*/
-
-   //          geocoder = new google.maps.Geocoder();
-//  codeAddress( address);//call the function
-
-
-            //address = r.responseText
-
-
-
-
-
             var latlng = readLatLngCookie("latlng")
 
             console.log(latlng)
@@ -103,6 +83,9 @@ console.log('breakpoint 1 works')
 
 }
 
+
+
+
 function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(-34.397, 150.644);
@@ -125,8 +108,13 @@ function codeAddress() {
       var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
-          createListing()
+          
+
+
+
       });
+
+      createListing(map)
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
