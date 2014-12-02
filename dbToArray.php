@@ -2,6 +2,8 @@
 
 header('Access-Control-Allow-Origin: *');
 
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
 
 //Collect the values in an array and convert it to JSON with json_encode:
 

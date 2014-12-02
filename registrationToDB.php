@@ -33,6 +33,9 @@ $query =  "UPDATE `user` SET `id`='$profileID',`username`='$username',`password`
 
 //$query = "INSERT INTO `user`(`id`, `username`,`password`,`email`,) VALUES '$memberID' , '$sessionID' " ;
 mysqli_query($connection, $query);
+
+header('Location: success.html');
+
 mysqli_close($connection);
 
 
