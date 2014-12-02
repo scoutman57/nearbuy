@@ -33,8 +33,7 @@ var_dump($dbuser);
 //var latlng = document.getElementById("loguser").value;
 
 
-$ad =echo '
-<!DOCTYPE html>
+$ad ='<!DOCTYPE html>
 <html>
 
 <head>
@@ -62,9 +61,6 @@ $ad =echo '
 </div>
 </body>
 </html>';
-
-global $connection,$id, $userID, $username, $title, $description, $image, $price, $address, $latlng;
-
 
 //$query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `userID`, `price`) VALUES ('$id','$latlng','$title','$address','$description','$image','$userID','$price')";
 
