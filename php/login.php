@@ -96,7 +96,7 @@ echo "<head> ";
 echo "</head>";
 echo "<body>";
 	echo "<h1>Logged in successfully</h1>";
-	echo "<button onclick=profile.html>Manage your listings</button>";
+	echo "<button onclick=goToProfile()>Manage your listings</button>";
 	echo "<button onclick='getMap()'>Find out what's nearbuy</button>";
 echo "</body>";
 echo "</html>";
