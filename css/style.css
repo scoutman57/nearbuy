@@ -16,6 +16,11 @@ h1{
 	width:50px;
 	height:50px;
 }
+.lgicon {
+	vertical-align: bottom;
+	width:100px;
+	height:100px;
+}
 /* ----- BUTTONS ----- */
 
 button {
@@ -53,7 +58,9 @@ button:focus{
 	width:25px;
 	height:25px;
 }
-
+.lgbutton{
+	width: 128px;
+}
 /* ----- CONTAINERS ----- */
 
 /*main website container*/
