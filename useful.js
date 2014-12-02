@@ -87,7 +87,7 @@ console.log('breakpoint 1 works')
 
              geocoder = new google.maps.Geocoder();
   codeAddress( address);//call the function
-}
+
 
             //address = r.responseText
 
