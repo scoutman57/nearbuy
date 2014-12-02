@@ -121,8 +121,8 @@ function initialize() {
     center: latlng
   }
 
-  
-codeAddress
+  console.log(holla)
+codeAddress()
 }
 
 function codeAddress() {
