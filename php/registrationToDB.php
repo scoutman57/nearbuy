@@ -38,7 +38,7 @@ $secretKey = $row['encryptionKey'];
 //echo $secretKey;
 
 $query =  "UPDATE `user` SET `id`=`$profileID`,`username`=`$username`,`password`=`$password`,`email`=`$email`,`address`=`$address`,`encryptionKey`=`$secretKey` WHERE `id`=`$profileID`";
-$query = "UPDATE `user` SET `id`=$profileID,`username`=$username,`password`=$password,`email`=$email,`address`=$address,`encryptionKey`=$keyQuery WHERE `id`=$profileID;"
+$query = "UPDATE `user` SET `id`=$profileID,`username`=$username,`password`=$password,`email`=$email,`address`=$address,`encryptionKey`=$keyQuery WHERE `id`=$profileID";
 
 //$query = "INSERT INTO `user`(`id`, `username`,`password`,`email`,) VALUES '$memberID' , '$sessionID' " ;
 mysqli_query($connection, $query);
