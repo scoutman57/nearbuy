@@ -37,6 +37,7 @@ var_dump($dbuser);
 function makeListing(){
 global $connection,$id, $userID, $username, $title, $description, $image, $price, $address, $latlng;
 
+
 $query = "INSERT INTO `info`(`id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `userID`, `price`) VALUES ('$id','$latlng','$title','$address','$description','$image','$userID','$price')";
 
 mysqli_query($connection, $query);

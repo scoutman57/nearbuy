@@ -30,9 +30,10 @@ console.log("makes it here to get coordinates")
     var coordinates;
 
     geocoder = new google.maps.Geocoder();
+    console.log("heyo")
     geocoder.geocode({address: address}, function(results,status){ 
 
-        console.log("heyo")
+        console.log("heyo2")
         if (status == google.maps.GeocoderStatus.OK) {  //If the geocode was okay, we can return the object
 
             coords_obj = results[0].geometry.location;          
@@ -89,6 +90,7 @@ console.log('breakpoint 1 works')
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
 
             console.log(latlng)
+            
             var profile = {username: user, title: name, description: descriptionText, image: imageLink, price: price, address: address, latlng: latlng}
 
 
