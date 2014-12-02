@@ -25,7 +25,8 @@ function register(){
 
     var ajaxCall = $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
-    url: 'http://localhost/php/registration.php',
+   // url: 'http://localhost/php/registration.php',    
+   url: 'http://near-buy.me/php/registration.php',
     data: firstPrep,
     complete: function(r){
 
@@ -56,7 +57,8 @@ function register(){
 
     var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
-    url: 'http://localhost/php/registrationToDB.php',
+    //url: 'http://localhost/php/registrationToDB.php',
+       url: 'http://near-buy.me/php/registrationToDB.php',
     data: profile,
     complete: function(r){
 
@@ -114,7 +116,8 @@ function login(){
 
     var ajaxCall= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
-    url: 'http://localhost/php/handshake.php',
+    //url: 'http://localhost/php/handshake.php',
+    url: 'http://near-buy.me/php/handshake.php',
     data: usernameForHandshake,
     complete: function(r){
 
