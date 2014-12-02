@@ -39,7 +39,7 @@ createSession();
 	
 	echo "true";
 
-	/*
+	
 echo "<!DOCTYPE html>";
 echo "<html>";
 echo "<head> ";
@@ -59,7 +59,7 @@ echo"</div>";
 echo "</body>";
 echo "</html>";
 
-*/
+
  
 
 
