@@ -47,6 +47,9 @@ $address = getAddress();
 */
 //get all teh other necessary info with some sql calls. Fill in the table.
 
+makeListing();
+
+
 function makeListing(){
 global $connection,$id, $userID, $username, $title, $description, $image, $price, $address, $latlng;
 
