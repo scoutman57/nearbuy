@@ -62,6 +62,11 @@ console.log('breakpoint 3 works')
 
 */
 
+function goToProfile(){
+
+  window.location.assign("profile.html");
+}
+
 function setCookie(cname) {
     
 
