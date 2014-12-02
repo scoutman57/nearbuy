@@ -276,8 +276,6 @@ if(login === true){
 
 function createListing(){
 
-    console.log(createListing)
-
 var user = readCookie("username")
 
 var name = document.getElementById("listName").value;
