@@ -96,7 +96,7 @@ console.log('breakpoint 1 works')
                 var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
                 type: 'POST',
                 //url: 'http://localhost/php/handshake.php',
-                url: 'http://near-buy.me/php/enterListing.php',
+                url: 'http://near-buy.me/php/listing.php',
                 data: profile,
                 complete: function(r){
 
