@@ -2,6 +2,7 @@ var user;
 
 function genlist(){
 	user = document.getElementById("userID").value;
+	//output = document.getElementById("results");
 	//console.log(user);
 
 	var profile = {username: user} //json encoding of msg
@@ -14,7 +15,8 @@ function genlist(){
 
 		complete: function(r){
 			var result = r.responseText;
-			console.log (result);
+			$("#results").html(result);
+
 		}
 
 	});

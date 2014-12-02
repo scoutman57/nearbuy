@@ -5,17 +5,16 @@
 
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/tips.js"></script>
     <script src="js/genlist.js"></script>
     <title>PROFILE</title>
 
 </head>
 
-<body>
+<body onload="genlist()">
 
     <h1><span class="profilename"></span> Profile </h1>
     <input type="hidden" id="userID" value="1234">
-    <button onclick="genlist()">TEST BUTTON</button>
+    <div id="results"></div>
 
 <table>
 <tr>
@@ -60,6 +59,19 @@
         <button class="submit" action="genlist()">Submit</button>
     </form>
 </div>
+
+<script type="text/javascript">
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "js/tips.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>
 
 </body>
 
