@@ -391,7 +391,7 @@ console.log(searchCircle + " is printed")
 
 	console.log(markers[i].latlng)
 
-            var infoInWindow = "< h1 style='color:black'; >" + markers[i].name + "</h1> <sp tyle='color:black';>"+markers[i].description_text+"</p>"
+            var infoInWindow = "< h1 id='contentWindow'>" + markers[i].name + "</h1> <p id='contentWindow'>"+markers[i].description_text+"</p>"
 
 
         		marker = new google.maps.Marker({
