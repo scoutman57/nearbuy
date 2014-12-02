@@ -125,6 +125,7 @@ console.log('breakpoint 3 works')
 
 
 function codeAddress(address) {
+    console.log("gets here")
   geocoder.geocode( {address:address}, function(results, status) 
   {
 
