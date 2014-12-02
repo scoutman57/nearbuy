@@ -92,11 +92,13 @@ console.log('breakpoint 1 works')
                 var latlng = coordinates[0]+", "+coordinates[1]
             //var latlng = new google.maps.LatLng(coordinates[0], coordinates[1]); 
 
-             addressToConvert = latlng});
+             //addressToConvert = latlng
+
+             return latlng});
 
 
 
-            console.log(addressToConvert)
+            console.log(coordinates)
 
             var latlng = addressToConvert
             
@@ -113,7 +115,7 @@ console.log('breakpoint 1 works')
                 complete: function(r){
 
 
-console.log('breakpoint 3 works')
+                console.log('breakpoint 3 works')
 
                   console.log(r.responseText)
 
