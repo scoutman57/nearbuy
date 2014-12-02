@@ -52,7 +52,7 @@ function register(){
 
        // console.log(encrypted)
 
-      var profile = {username : regUser, password : encrypted, email : regEmail, profileID : parseInt(id[0]), address: regadd}
+      var profile = {username : regUser, password : encrypted, email : regEmail, profileID : parseInt(id[0]), address: regAddress}
 
     var ajaxCall2= $.ajax({ // sends a request to server, telling it to prepare a place in it. Assigns a member id and returns it
     type: 'POST',
@@ -60,8 +60,8 @@ function register(){
     data: profile,
     complete: function(r){
 
-      console.log("success! This is where you draw the success page!")
-        
+      //console.log("success! This is where you draw the success page!")
+        window.location.assign("success.html")
 
                 }    
         
@@ -72,15 +72,35 @@ function register(){
 });
 }
 
+function echoUsername(){
+
+console.log(readCookie("username")) 
+
+
+}
+
+
+
 
 function setCookie(cname) {
     
-    document.cookie = cname;
+
+    document.cookie = "username="+cname;
 }
 
-function getCookie(cname) {
-    var name = cname 
-    return name;
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
 }
 
 
@@ -112,10 +132,13 @@ function login(){
 
                         console.log(r.responseText)
                         setCookie(user)
+                        console.log(readCookie("username"))
 
-                        document.write(r.responseText)
 
+                     //   document.write("<p>holla</p>")
+                       document.write(r.responseText)
 
+                       echoUsername();
 
                        console.log("success! This is where you draw the login success or fail page!")
                 }    
