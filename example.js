@@ -149,7 +149,9 @@ console.log("makes it here to get coordinates")
 
  			coords_obj = results[0].geometry.location; 			
  			coordinates = [coords_obj.k, coords_obj.B]
- 			callback(coordinates);
+ 			
+
+      callback(coordinates);
 
  		} else {
  		alert(" The Geocoding didn't work ")
@@ -388,7 +390,7 @@ console.log(searchCircle + " is printed")
             		position: newLatLongMarker, //loops through and adds the position of each of these markers
             		map: map,
             		title: markers[i].name,
-            		info: markers[i].description
+            		info: markers[i].ad
 
         		});
 
