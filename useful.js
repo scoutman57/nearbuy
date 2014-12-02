@@ -121,15 +121,20 @@ function initialize() {
     center: latlng
   }
 
-  console.log(holla)
+  console.log("holla")
 codeAddress()
 }
 
+
+
+
 function codeAddress() {
+    console.log("test")
   //var address = document.getElementById('address').value;
 var address =  document.getElementById('listLoc').value;
   geocoder.geocode( { 'address': address}, function(results, status) {
-    
+        console.log(results)
+        console.log(status)
     if (status == google.maps.GeocoderStatus.OK) {
 
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
