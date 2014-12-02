@@ -148,7 +148,7 @@ var address =  document.getElementById('listLoc').value;
 codeAddress(address)
 
 
-coords_obj = map.getCenter()
+coords_obj = results[0].geometry.location
 
 coordinates = [coords_obj.k, coords_obj.B]
 
