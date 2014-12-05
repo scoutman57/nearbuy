@@ -1,20 +1,11 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+//header('Access-Control-Allow-Origin: *');
+//header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 //Collect the values in an array and convert it to JSON with json_encode:
 
-$servername = "near-buy.me";
-$dbuser = 'admin';
-$dbpass = 'password';
-$dbname = "nearbuy";
-
-$connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
-
-if (!$connection) {
-   	die("Connection failed: " . mysqli_connect_error());
-}
+require 'connect.php'; //returns $connection
 
 $query = "SELECT * FROM `info` " ;
 $result = mysqli_query($connection, $query);

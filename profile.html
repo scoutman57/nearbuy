@@ -2,90 +2,41 @@
 <html>
 
 <head>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ2NuY0Zdj58_piW39pGy0IRf9b-DbFqg"></script>
+    <title>PROFILE</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/genlist.js"></script>
-    <script src="js/tips.js"></script>
-    <script src="useful.js"></script>
-    <title>PROFILE</title>
-<script>
-    function tabletoggle(){
-        $("#table").toggle(1000);
-    };
-    function goback(){
-	window.location.href='splash2.html';
-    }
-</script>
+    <script src="js/profile.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+        function goback(){
+    	   window.location.href='splash.html';
+        }
+    </script>
 </head>
 
 <body onload="genlist()">
 
-    <h1><span class="profilename"></span> Profile </h1>
-    <input type="hidden" id="username" value="a">
-    <div id="results"></div>
+<h1><span id="profilename"></span> Profile </h1>
 
+<!-- display area for current listings -->
+<div id="results"></div> 
 
-<table id="table">
-<tr>
-    <th>Item</th>
-    <th>Price</th>
-    <th>Location</th>
-    <th>Picture Link</th>
-    <th>Views</th>
-    <th>Description</th>
-    <th>Edit</th>
-</tr>
-<tr>
-    <td>Boot Strap!</td>
-    <td>$10.00</td>
-    <td>The docks</td>
-    <td>www.abc.com</td>
-    <td>0</td>
-    <td class="desc">It goes on your foot! and then you walk in it. is this text hidden yet?</td>
-    <td><img src="img/del.png" class="del"></td>
-</tr>
-<tr>
-    <td>Hat</td>
-    <td>$10.00</td>
-    <td>My head</td>
-    <td>n/a</td>
-    <td>0</td>
-    <td class="desc">this one will have a different description with a different length so that you know its different!</td>
-    <td><img src="img/del.png" class="del"></td>
-</tr>
-</table>
-
-    <br><br>
-<script type="text/javascript">
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-</script>
-
-<div class="map-canvas" id="map-canvas"></div>
+<br><br>
 
 <div class="listing">
     <h2>Create a new listing </h2>
-    <form action="">
         <input class="new" type="text"  id="listName" placeholder="Name" required/><br>
-        <input class="new" id="listPrice" type="text" placeholder="Price" required/><br>
+        <input class="new" type="text" id="listPrice" placeholder="Price" required/><br>
         <input class="new" type="text"  id="listLoc"placeholder="Location" required/><br>
-        <input class="new" type="text" id="listPIc" placeholder="Link to Picture"/><br>
+        <input class="new" type="text" id="listPic" placeholder="Link to Picture"/><br>
         <textarea class="newdesc" type="text" id="listDesc" placeholder="Description"/></textarea><br>
-        <button onclick="codeAddress()">Submit</button>
-    </form>
+        <button onclick="getCoords()">Submit</button>
 </div>
 
 <button id="back" onclick="goback()"> Return to home </button>
-<button onclick="tabletoggle()">Toggle</button>
+<input type="hidden" id="hidden" value=""/>
 
-<script src='useful.js'></script>
-    <script src='varAssign.js'></script>
-
-<script type="text/javascript">
-    
-</script>
+<button id="remove" onclick=""><img src="img/del.png" class="del"></button>
 
 </body>
 

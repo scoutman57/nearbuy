@@ -1,16 +1,8 @@
 <?php
 
-$servername = "near-buy.me";
-$dbuser = 'admin';
-$dbpass = 'password';
-$dbname = "nearbuy";
+require 'connect.php'; //returns $connection
 
-$connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
-
-if (!$connection) {
-   	die("Connection failed: " . mysqli_connect_error());
-}
-
+//grab all info from JSON
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];

@@ -5,10 +5,6 @@ body {
 	color: white;
 	background: url("../img/bkg5.jpg");
 }
-
-
-
-
 h1{
 	font-size: 64px;
 	text-align: center;
@@ -24,6 +20,7 @@ h1{
 	width:100px;
 	height:100px;
 }
+
 /* ----- BUTTONS ----- */
 
 button {
@@ -55,20 +52,28 @@ button:active {
 button:focus{
 	outline: none;
 }
-
 .del {
-	vertical-align: bottom;
 	width:25px;
 	height:25px;
 }
 .lgbutton{
 	width: 128px;
 }
+button#remove{
+	border-radius:20px;
+	width: 35px;
+	height: 35px;
+	padding: 0px;
+	border: none;
+	text-align: bottom;
+	vertical-align: center;
+}
+
 /* ----- CONTAINERS ----- */
 
 /*main website container*/
 div.large{
-	width: 400px;
+	width: 500px;
 	text-align: center;
 	position: center;
 	margin-left: auto;
@@ -131,14 +136,14 @@ table {
 td, th {
     max-width: 200px;
     font-size: 16px;
-}
+}/*
 .desc {
     width: 100px;
     max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
+}*/
 tr:nth-child(even) {
     background-color: rgba(100,100,100,0.50);
 }

@@ -1,22 +1,19 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+//header('Access-Control-Allow-Origin: *');
+//header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-$servername = "near-buy.me";
-$dbuser = 'admin';
-$dbpass = 'password';
-$dbname = "nearbuy";
+require 'connect.php'; //returns $connection
 
-$connection = mysqli_connect($servername, $dbuser, $dbpass,$dbname);
-
-if (!$connection) {
-   	die("Connection failed: " . mysqli_connect_error());
-}
-
+//grab info
 $username = $_POST["username"];
+
+//send query for key
 $secretKeyQuery = "SELECT `encryptionKey` FROM `user` WHERE `username`='$username'";
 $result = mysqli_query($connection, $secretKeyQuery);
+mysqli_close($connection);
+
+//echo key back
 $row = $result->fetch_assoc();
 $secretKey = $row['encryptionKey'];
 echo $secretKey;
