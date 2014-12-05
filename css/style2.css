@@ -3,7 +3,6 @@ html, body, #map-canvas {
 	background: transparent url(../img/ajax-loader.gif) no-repeat center center;
 	font-family: Arial, sans-serif;
 	font-size: 16px;
-	text-shadow: 2px 2px 2px #555555;
 	color: black;
 }
 
@@ -22,13 +21,14 @@ html, body, #map-canvas {
     position: absolute;
     background-color: rgba(105,105,105,0.65);
     height: 200px;
-    width: 220px;
+    width: 230px;
     left: 20px;
     top: 20px;
     z-index: 1;
     border-radius:15px;
     border:5px solid #ffffff;
     padding: 10px;
+    text-align: center;
 }
 
 #button {
@@ -62,18 +62,14 @@ html, body, #map-canvas {
 	outline: none;
 }
 
-#contentWindowYo{
-	width:200px;
-	height: 200px;
-}
-
-
 input[type="text"]{
 	display: inline;
 	background-color: rgba(0,0,0,0.0);
 	border: 4px solid#ffffff;
 	width:200px;
-	padding: 10px 5px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	border-radius:15px;
 	color: white;
 	font-family:Arial;
@@ -95,4 +91,11 @@ input[type="range"]{
     -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0.9, 0.9, 0.9, 0.9);
     -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0.9, 0.9, 0.9, 0.9);
     box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 1px 0px rgba(0.9, 0.9, 0.9, 0.9);
+}
+
+#info{
+	width: 250px;
+	font-size: 12px;
+	font-weight: bold;
+	/*background-color: rgba(200,100,0,0.7);*/
 }

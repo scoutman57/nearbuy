@@ -48,25 +48,25 @@ function getAddress(username, shouldIInit){
 
 function getMap(){
     console.log("getmap is being called");
-	getAddress(readCookie("username"), false);
-	window.location.assign("mappage.html");
-	setTimeout(initialize2(searchAddress, searchDistance, array), 100);
+    getAddress(readCookie("username"), false);
+    window.location.assign("mappage.html");
+    setTimeout(initialize2(searchAddress, searchDistance, array), 100);
 }
 
 function getCoordinates(address, callback){
     //console.log("makes it here to get coordinates")
-	var coordinates;
+    var coordinates;
     var geocoder = new google.maps.Geocoder();
- 	geocoder.geocode({address: address}, function(results,status){ 
- 		if (status == google.maps.GeocoderStatus.OK) {  //If the geocode was okay, we can return the object
- 			coords_obj = results[0].geometry.location; 			
- 			coordinates = [coords_obj.k, coords_obj.B];
+    geocoder.geocode({address: address}, function(results,status){ 
+        if (status == google.maps.GeocoderStatus.OK) {  //If the geocode was okay, we can return the object
+            coords_obj = results[0].geometry.location;          
+            coordinates = [coords_obj.k, coords_obj.B];
             callback(coordinates);
- 		} else {
+        } else {
             alert(" The Geocoding didn't work ");
- 		} 
- 	});
- 	return coordinates;
+        } 
+    });
+    return coordinates;
 }
 
 //Need a function to convert addresses to geocode 
@@ -76,10 +76,9 @@ function getArray() {
     //post call from php. Get an array. Return the array.
     });
 }
-
 function populateArray(){
-	array = getArray();
-	return array;
+    array = getArray();
+    return array;
 }
 */
 //This gets the entire array from our db
@@ -120,7 +119,7 @@ function redoCircle(newAddress){
                 if (status == google.maps.GeocoderStatus.OK) {
                     var address = (results[0].formatted_address);
                     searchAddress = address;
-    	           initialize2(searchDistance, address, array);
+                   initialize2(searchDistance, address, array);
                 }
             }); //end of geocoder
             //initialize2(searchDistance, newAddress, array)
@@ -139,7 +138,7 @@ function changeAddress(newAddress){
             var array = eval(r.responseText);
             console.log(array[0].latlng);
             searchAddress = newAddress;
-        	initialize2(searchDistance, searchAddress,array);
+            initialize2(searchDistance, searchAddress,array);
         }
     });
 }
@@ -208,33 +207,36 @@ var coordinates = getCoordinates(address, function(coordinates){
 
         var latlong = markers[i].latlng.split(',');
         var newLatLongMarker = new google.maps.LatLng(parseFloat(latlong[0]), parseFloat(latlong[1]));
-        //console.log(newLatLongMarker);
-        if (searchCircle.getBounds().contains(newLatLongMarker) == true) { //If the points are within distance, we add them to the map
-            console.log(searchCircle + " is printed");
-            console.log(markers[i].latlng);
-            // var infoInWindow = '<span style="background-color:black"> <h1>' + markers[i].name + '</h1> <p>'+markers[i].description_text+'</p></span>';
+        //If the points are within distance, we add them to the map
+        if (searchCircle.getBounds().contains(newLatLongMarker) == true) { 
+            
+            var contentString = 
+                '<div id="info">Title: '+markers[i].name+'<br>Seller: '+markers[i].username+'<br>Price: '+markers[i].price+
+                '<br><a href='+markers[i].imagelink+' target="_blank">Image</a><br>Desc: '+markers[i].description_text+'</div>';
+
             marker = new google.maps.Marker({
-                position: newLatLongMarker, //loops through and adds the position of each of these markers
+                position: newLatLongMarker,
                 map: map,
                 title: markers[i].name,
-                info: "Desc: "+markers[i].description_text
+                info: contentString
             });
-            var infowindow = new google.maps.InfoWindow({ // creates an infowindow for each marker
-          		content: "<div id='contentWindowYo'>: "+markers[i].description_text +"</div>", //whatever is in element 3 will be entered 
-                //
-      		});
-            google.maps.event.addListener(marker, 'click', function() {//makes the info window for each marker open
-    	   		infowindow.setContent(this.info); //replace this.title with whatever content you want
-    	   		infowindow.open(map, this);
-    		});
+            // creates an infowindow for each marker
+            var infowindow = new google.maps.InfoWindow({ 
+                //content: contentString,//"<div id='contentWindowYo'>: "+markers[i].description_text +"</div>", //whatever is in element 3 will be entered 
+            });
+            //makes the info window for each marker open
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(this.info); //replace this.title with whatever content you want
+                infowindow.open(map, this);
+            });
         }
 
     };
 
     //Home marker. Automatically placed at the given address.
     var homeMarker = new google.maps.Marker({ // I
-    	position: homeCenter,
-    	map: map, //can use marker.setMap(map) outside this function too.
+        position: homeCenter,
+        map: map, //can use marker.setMap(map) outside this function too.
         title:"Home",
         icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
         draggable:true,
@@ -249,7 +251,7 @@ var coordinates = getCoordinates(address, function(coordinates){
         //searchCircle.setCenter(homeMarker.getPosition())
         //searchCircle = new google.maps.Circle(areaOfSearch);
         //initialize(searchDistance, searchCircle.getCenter())
-    	redoCircle(searchCircle.getCenter());
+        redoCircle(searchCircle.getCenter());
     });
 
     google.maps.event.addListener(map, 'zoom_changed', function() {
