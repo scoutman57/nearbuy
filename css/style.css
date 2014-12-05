@@ -8,8 +8,8 @@ body {
 h1{
 	font-size: 64px;
 	text-align: center;
+	text-shadow: 2px 2px 2px #555555;
 }
-
 .icon {
 	vertical-align: bottom;
 	width:50px;
@@ -53,6 +53,10 @@ button:focus{
 	outline: none;
 }
 .del {
+	width:25px;
+	height:25px;
+}
+.imglnk {
 	width:25px;
 	height:25px;
 }
@@ -136,19 +140,34 @@ table {
 td, th {
     max-width: 200px;
     font-size: 16px;
-}/*
+}
+tr:nth-child(even) {
+    background-color: rgba(100,100,100,0.50);
+}
+tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.5);
+}
+#non{
+	border: none;
+	background-color: rgba(0,0,0,0);
+}
+#title{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+#price{
+	max-width:75px;
+}
+#price{
+	max-width:75px;
+}
+/*
 .desc {
     width: 100px;
     max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}*/
-tr:nth-child(even) {
-    background-color: rgba(100,100,100,0.50);
-}
-tr:nth-child(odd) {
-    background-color: rgba(0,0,0,0.5);
 }
 .tooltip {	
 	font-size: 16px;
@@ -161,7 +180,7 @@ tr:nth-child(odd) {
 	border-radius: 10px;
 	padding: 10px;
     white-space: normal;
-}
+}*/
 
 /* ----- NEW LISTING ----- */
 
@@ -170,17 +189,21 @@ div.listing{
 	width: 550px;
 	position: center;
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 	border: 5px solid white;
 	border-radius: 10px;
 	text-align: center;
 	padding: 10px;
 }
 h2{
-	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 5px;
 	font-size: 32px;
 	width: 500px;
 	text-align: center;
+	position: center;
 }
 input.new{
 	width: 500px;

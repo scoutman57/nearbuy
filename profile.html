@@ -13,17 +13,21 @@
         }
     </script>
     <script>
-    function myFunction() {
-        window.open("ajax-chat.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=100, left=100, width=700, height=500");
-    }
+        function myFunction() {
+            window.open("ajax-chat.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=100, left=100, width=700, height=500");
+        }
     </script>
 
 </head>
 
 <body onload="genlist()">
 
-<h1><span id="profilename"></span> Profile </h1>
-
+<table id="non"><tr id="non">
+<td><button class="lgbutton" onclick="goback()"><img src="img/home.png" class="lgicon">Return to home page</button></td>
+<td id="title"><h1><span id="profilename"></span> Profile </h1></td>
+<td><button class="lgbutton" onclick="myFunction()"><img src="img/chat.png" class="lgicon">Open <br> chat <br> window</button></td>
+</tr></table>
+<h2>Your current listings</h2>
 <!-- display area for current listings -->
 <div id="results"></div> 
 
@@ -39,11 +43,6 @@
         <button onclick="getCoords()">Submit</button>
 </div>
 
-<button id="back" onclick="goback()"> Return to home </button>
-<input type="hidden" id="hidden" value=""/>
-
-<button id="remove" onclick=""><img src="img/del.png" class="del"></button>
-<button onclick="myFunction()">Chat!</button>
 </body>
 
 

@@ -19,23 +19,28 @@ if (mysqli_num_rows($result) > 0) {
 	<table>
 	<tr>
 	    <th>Item</th>
-	    <th>Price</th>
+	    <th id="price">Price</th>
 	    <th>Location</th>
-	    <th>Picture Link</th>
+	    <th>Picture</th>
 	    <th>Description</th>
 	    <th>Remove</th>
 	</tr>';
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
     	// `id`, `latlng`, `name`, `address`, `description_text`, `imagelink`, `viewcount`, `username`, `price`, `ad` 
-        echo "<tr id=" . $row["id"] . "><td>" . $row["name"]."</td><td>" 
-        . $row["price"] . "</td><td>" . $row["address"].  "</td><td>" . $row["imagelink"]. 
-        "</td><td>" . $row["description_text"]."</td>";
-        echo'<td><button id="remove" onclick="listdel(this)"><img src="img/del.png" class="del"></button></td>';
+        echo "<tr id=" . $row["id"] . "><td>" . $row["name"]."</td><td>" . $row["price"] . "</td><td>" . $row["address"]. "</td><td>";
+        //add image link only if one was provided
+		if (strlen(trim(preg_replace('/\xc2\xa0/',' ',$row["imagelink"]))) == 0) {
+    		echo "</td>";
+		} else {
+        	echo "<a href=" . $row["imagelink"]. " target='_blank'><img class='imglnk' src='img/link.png'></a> </td>";
+		}
+        echo "<td>" . $row["description_text"]."</td>";
+        echo '<td><button id="remove" onclick="listdel(this)"><img src="img/del.png" class="del"></button></td>';
     }
     echo "</table>";
 } else {
-    echo "0 results";
+    echo "<h2>You're not selling anything yet</h2>";
 }
 
 

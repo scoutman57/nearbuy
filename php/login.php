@@ -18,28 +18,35 @@ $encryptedPassword = $row['password'];
 
 if($encryptedPassword == $password){
 	createSession();
-	echo "
-		<!DOCTYPE html>
-		<html>
-		<head>
-		    <title>SPLASH</title>
-		    <link href='css/style.css' rel='stylesheet'>
-		    <script src='js/jquery-2.1.1.min.js'></script>
-		    <script src='js/varAssign.js'></script>
-		    <script src='js/example.js'></script>
-		    <script src='js/profile.js'></script>
-		    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-
-		</head>";
-	echo '
-		<body>
-		<div class="large">
-			<h1>Login success</h1>
-			<button class="lgbutton" onclick="goToProfile()"><img src="img/list.png" class="lgicon">Manage your listings</button>
-			<button class="lgbutton" onclick="getMap()"><img src="img/map.png" class="lgicon">Find out whats nearbuy</button>
-		</div>
-		</body>
-		</html>';
+	echo"
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <title>SPLASH</title>
+	    <link href='css/style.css' rel='stylesheet'>
+	    <script src='js/jquery-2.1.1.min.js'></script>
+	    <script src='js/varAssign.js'></script>
+	    <script src='js/example.js'></script>
+	    <script src='js/profile.js'></script>
+    ";
+    echo'
+	    <script>
+	    function myFunction() {
+	        window.open("ajax-chat.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=100, left=100, width=700, height=500");
+	    }
+	    </script>
+	</head>
+	<body>
+	<div class="large">
+		<h1>Login success</h1>
+		<button class="lgbutton" onclick="goToProfile()"><img src="img/list.png" class="lgicon">Manage your listings</button>
+	    &nbsp &nbsp
+		<button class="lgbutton" onclick="getMap()"><img src="img/map.png" class="lgicon">Find out whats nearbuy</button>
+	    &nbsp &nbsp
+	    <button class="lgbutton" onclick="myFunction()"><img src="img/chat.png" class="lgicon">Open <br> chat <br> window</button>
+	</div>
+	</body>
+	</html>';
 } else {
 	echo "
 		<!DOCTYPE html>

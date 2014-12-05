@@ -72,20 +72,20 @@ function addToDB(jsonProfile){
 }
 
 function listdel(e) {
-	/*var lid=($(e).closest('tr').attr('id'));
-	console.log(id);
-	document.getElementById(id).remove();
+	var lid=($(e).closest('tr').attr('id'));
+	console.log(lid);
+	document.getElementById(lid).remove();
 	var profile = {id: lid}; //json encoding
-	delFromDB(profile);*/
+	delFromDB(profile);
 }
 
 function delFromDB(jsonProfile){
-  /*  $.ajax({
+    $.ajax({
         type: 'POST',
         url: 'php/removeListing.php',
         data: jsonProfile,
         complete: function(r){
         	console.log(r.responseText);
         }
-    });*/
+    });
 }
