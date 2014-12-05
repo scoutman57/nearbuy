@@ -12,6 +12,12 @@
     	   window.location.href='splash.html';
         }
     </script>
+    <script>
+    function myFunction() {
+        window.open("ajax-chat.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=100, left=100, width=700, height=500");
+    }
+    </script>
+
 </head>
 
 <body onload="genlist()">
@@ -37,7 +43,7 @@
 <input type="hidden" id="hidden" value=""/>
 
 <button id="remove" onclick=""><img src="img/del.png" class="del"></button>
-
+<button onclick="myFunction()">Chat!</button>
 </body>
 
 
