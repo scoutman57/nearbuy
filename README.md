@@ -20,4 +20,5 @@ Build
 This repo (https://github.com/bregord/nearbuy) contains all files needed to run the site. 
 Including both front and back end. The php files contain the necessary settings to connect to our remote SQL database.
 The files can be run from a folder, or launched with Apache.
+The site uses HTML5, CSS3, JavaScript, JQuery, Ajax, PHP, SQL, securities, Google Maps API, and Ajax Chat framework. <br>
 Try it out for yourself at <a href="near-buy.me">near-buy.me</a> and see what is nearbuy!
